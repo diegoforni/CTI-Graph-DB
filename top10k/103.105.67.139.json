@@ -1,0 +1,578 @@
+{
+  "general": {
+    "whois": "http://whois.domaintools.com/103.105.67.139",
+    "reputation": 0,
+    "indicator": "103.105.67.139",
+    "type": "IPv4",
+    "type_title": "IPv4",
+    "base_indicator": {
+      "id": 3182338928,
+      "indicator": "103.105.67.139",
+      "type": "IPv4",
+      "title": "",
+      "description": "",
+      "content": "",
+      "access_type": "public",
+      "access_reason": ""
+    },
+    "pulse_info": {
+      "count": 6,
+      "pulses": [
+        {
+          "id": "66794486bda6c3cf8823c604",
+          "name": "TCP active portscan",
+          "description": "This pulse contains hourly updated list of detected scanning hosts performing active portscan, also known as service probing. Notably, this activity requires TCP 3WHS to be established, therefore data published can't be forged.",
+          "modified": "2025-04-05T05:54:08.016000",
+          "created": "2024-06-24T10:03:50.698000",
+          "tags": [
+            "portscan",
+            ""
+          ],
+          "references": [
+            ""
+          ],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "Poland",
+            "Sweden"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Telecommunications"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 72404,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "skhron-soc",
+            "id": "279660",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 39042,
+            "IPv6": 4
+          },
+          "indicator_count": 39046,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 500,
+          "modified_text": "5 minutes ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "677e5122ed0c96c5c55c9cc6",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2025-02-07T10:00:39.307000",
+          "created": "2025-01-08T10:19:14.767000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 15,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "56 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        },
+        {
+          "id": "66d500b4efe735d95e90e0d7",
+          "name": "Uzaktan Tetiklenen Kara Delik",
+          "description": "Remotely Triggered Black Hole",
+          "modified": "2024-10-02T00:05:48.225000",
+          "created": "2024-09-02T00:03:00.003000",
+          "tags": [
+            "RTBH",
+            "DDoS"
+          ],
+          "references": [
+            "https://list.rtbh.com.tr/output.txt"
+          ],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1498",
+              "name": "Network Denial of Service",
+              "display_name": "T1498 - Network Denial of Service"
+            },
+            {
+              "id": "T1499",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 3,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "skocherhan",
+            "id": "249290",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_249290/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "CIDR": 493,
+            "URL": 145
+          },
+          "indicator_count": 638,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 115,
+          "modified_text": "185 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [
+            "rtbh"
+          ],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "66871b847e503e9b15aef17e",
+          "name": "ETIC Cybersecurity  2024-07-05  Port Scan",
+          "description": "",
+          "modified": "2024-07-05T22:00:00.807000",
+          "created": "2024-07-04T22:00:36.872000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 4,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "EticCybersecurity",
+            "id": "205841",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_205841/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 479,
+          "modified_text": "273 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "6584b58af4c4313a38cfc918",
+          "name": "IOCs - 20231221216 - ANIA Threat Feeds - IP Segment 1",
+          "description": "ANIA Collector - Advanced Network Interactive Analysis Collector - Collected from Internet Storm Center IOCs List",
+          "modified": "2024-01-20T22:03:52.233000",
+          "created": "2023-12-21T22:00:42.235000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 26,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "AlessandroFiori",
+            "id": "91912",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_91912/resized/80/avatar_2b1b2b88b6.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 399,
+          "modified_text": "440 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "657f2216cdcc806edeca1903",
+          "name": "IOCs - 202312162226 - ANIA Threat Feeds - IP Segment 1",
+          "description": "ANIA Collector - Advanced Network Interactive Analysis Collector - Collected from Internet Storm Center IOCs List",
+          "modified": "2024-01-16T16:03:46.415000",
+          "created": "2023-12-17T16:30:14.180000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 22,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "AlessandroFiori",
+            "id": "91912",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_91912/resized/80/avatar_2b1b2b88b6.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 400,
+          "modified_text": "444 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        }
+      ],
+      "references": [
+        "",
+        "https://list.rtbh.com.tr/output.txt"
+      ],
+      "related": {
+        "alienvault": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": []
+        },
+        "other": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": [
+            "Telecommunications"
+          ]
+        }
+      }
+    },
+    "false_positive": [],
+    "validation": [],
+    "asn": "AS17995 pt iforte global internet",
+    "city_data": true,
+    "city": "Surabaya",
+    "region": "JI",
+    "continent_code": "AS",
+    "country_code3": "IDN",
+    "country_code2": "ID",
+    "subdivision": "JI",
+    "latitude": -7.2484,
+    "postal_code": null,
+    "longitude": 112.7419,
+    "accuracy_radius": 500,
+    "country_code": "ID",
+    "country_name": "Indonesia",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/id.png",
+    "flag_title": "Indonesia",
+    "sections": [
+      "general",
+      "geo",
+      "reputation",
+      "url_list",
+      "passive_dns",
+      "malware",
+      "nids_list",
+      "http_scans"
+    ]
+  },
+  "reputation": {
+    "reputation": null
+  },
+  "geo": {
+    "asn": "AS17995 pt iforte global internet",
+    "city_data": true,
+    "city": "Surabaya",
+    "region": "JI",
+    "continent_code": "AS",
+    "country_code3": "IDN",
+    "country_code2": "ID",
+    "subdivision": "JI",
+    "latitude": -7.2484,
+    "postal_code": null,
+    "longitude": 112.7419,
+    "accuracy_radius": 500,
+    "country_code": "ID",
+    "country_name": "Indonesia",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/id.png",
+    "flag_title": "Indonesia"
+  },
+  "malware": {
+    "data": [],
+    "size": 0,
+    "count": 0
+  },
+  "url_list": {
+    "url_list": [
+      {
+        "url": "http://103.105.67.139/dashboard/",
+        "date": "2024-05-11T17:14:32",
+        "domain": "",
+        "hostname": "103.105.67.139",
+        "result": {
+          "urlworker": {
+            "ip": "103.105.67.139",
+            "http_code": 200
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 200,
+        "gsb": [],
+        "encoded": "http%3A//103.105.67.139/dashboard/"
+      },
+      {
+        "url": "https://103.105.67.139/",
+        "date": "2024-05-11T17:14:32",
+        "domain": "",
+        "hostname": "103.105.67.139",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "https%3A//103.105.67.139/"
+      },
+      {
+        "url": "https://103.105.67.139",
+        "date": "2023-12-17T16:32:55",
+        "domain": "",
+        "hostname": "103.105.67.139",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "https%3A//103.105.67.139"
+      },
+      {
+        "url": "http://103.105.67.139",
+        "date": "2023-12-17T16:30:48",
+        "domain": "",
+        "hostname": "103.105.67.139",
+        "result": {
+          "urlworker": {
+            "ip": "103.105.67.139",
+            "http_code": 200
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 200,
+        "gsb": [],
+        "encoded": "http%3A//103.105.67.139"
+      },
+      {
+        "domain": "",
+        "url": "http://103.105.67.139:443",
+        "hostname": "103.105.67.139",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "date": "2019-12-31T11:12:26",
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "http%3A//103.105.67.139%3A443"
+      }
+    ],
+    "page_num": 1,
+    "limit": 10,
+    "paged": true,
+    "has_next": false,
+    "full_size": 5,
+    "actual_size": 5
+  },
+  "passive_dns": {
+    "passive_dns": [],
+    "count": 0
+  }
+}

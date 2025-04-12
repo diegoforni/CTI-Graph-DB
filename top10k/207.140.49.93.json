@@ -1,0 +1,384 @@
+{
+  "general": {
+    "whois": "http://whois.domaintools.com/207.140.49.93",
+    "reputation": 0,
+    "indicator": "207.140.49.93",
+    "type": "IPv4",
+    "type_title": "IPv4",
+    "base_indicator": {
+      "id": 3777573037,
+      "indicator": "207.140.49.93",
+      "type": "IPv4",
+      "title": "",
+      "description": "",
+      "content": "",
+      "access_type": "public",
+      "access_reason": ""
+    },
+    "pulse_info": {
+      "count": 3,
+      "pulses": [
+        {
+          "id": "66794486bda6c3cf8823c604",
+          "name": "TCP active portscan",
+          "description": "This pulse contains hourly updated list of detected scanning hosts performing active portscan, also known as service probing. Notably, this activity requires TCP 3WHS to be established, therefore data published can't be forged.",
+          "modified": "2025-04-05T20:40:33.993000",
+          "created": "2024-06-24T10:03:50.698000",
+          "tags": [
+            "portscan",
+            ""
+          ],
+          "references": [
+            ""
+          ],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "Poland",
+            "Sweden"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Telecommunications"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 72760,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "skhron-soc",
+            "id": "279660",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 38355,
+            "IPv6": 6
+          },
+          "indicator_count": 38361,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 502,
+          "modified_text": "1 minute ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 1,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "659f17c85777f3a660395472",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2024-02-09T22:01:30.107000",
+          "created": "2024-01-10T22:18:48.428000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "420 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        },
+        {
+          "id": "65402b6b1bef5f830f4675e1",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-11-29T22:01:10.248000",
+          "created": "2023-10-30T22:17:14.951000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 12,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "492 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        }
+      ],
+      "references": [
+        ""
+      ],
+      "related": {
+        "alienvault": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": []
+        },
+        "other": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": [
+            "Telecommunications"
+          ]
+        }
+      }
+    },
+    "false_positive": [],
+    "validation": [],
+    "asn": "AS7018 att services inc",
+    "city_data": true,
+    "city": "Anaheim",
+    "region": "CA",
+    "continent_code": "NA",
+    "country_code3": "USA",
+    "country_code2": "US",
+    "subdivision": "CA",
+    "latitude": 33.8351,
+    "postal_code": "92806",
+    "longitude": -117.8652,
+    "accuracy_radius": 20,
+    "country_code": "US",
+    "country_name": "United States of America",
+    "dma_code": 803,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/us.png",
+    "flag_title": "United States of America",
+    "sections": [
+      "general",
+      "geo",
+      "reputation",
+      "url_list",
+      "passive_dns",
+      "malware",
+      "nids_list",
+      "http_scans"
+    ]
+  },
+  "reputation": {
+    "reputation": null
+  },
+  "geo": {
+    "asn": "AS7018 att services inc",
+    "city_data": true,
+    "city": "Anaheim",
+    "region": "CA",
+    "continent_code": "NA",
+    "country_code3": "USA",
+    "country_code2": "US",
+    "subdivision": "CA",
+    "latitude": 33.8351,
+    "postal_code": "92806",
+    "longitude": -117.8652,
+    "accuracy_radius": 20,
+    "country_code": "US",
+    "country_name": "United States of America",
+    "dma_code": 803,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/us.png",
+    "flag_title": "United States of America"
+  },
+  "malware": {
+    "data": [],
+    "size": 0,
+    "count": 0
+  },
+  "url_list": {
+    "url_list": [
+      {
+        "url": "http://207.140.49.93/",
+        "date": "2024-09-02T02:47:44",
+        "domain": "",
+        "hostname": "207.140.49.93",
+        "encoded": "http%3A//207.140.49.93/"
+      },
+      {
+        "url": "https://207.140.49.93/",
+        "date": "2024-09-02T02:47:43",
+        "domain": "",
+        "hostname": "207.140.49.93",
+        "encoded": "https%3A//207.140.49.93/"
+      },
+      {
+        "url": "https://207.140.49.93",
+        "date": "2023-10-30T22:17:22",
+        "domain": "",
+        "hostname": "207.140.49.93",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "https%3A//207.140.49.93"
+      },
+      {
+        "url": "http://207.140.49.93",
+        "date": "2023-10-30T22:17:18",
+        "domain": "",
+        "hostname": "207.140.49.93",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "http%3A//207.140.49.93"
+      }
+    ],
+    "page_num": 1,
+    "limit": 10,
+    "paged": true,
+    "has_next": false,
+    "full_size": 4,
+    "actual_size": 4
+  },
+  "passive_dns": {
+    "passive_dns": [],
+    "count": 0
+  }
+}

@@ -1,0 +1,4708 @@
+{
+  "general": {
+    "whois": "http://whois.domaintools.com/45.140.17.23",
+    "reputation": 0,
+    "indicator": "45.140.17.23",
+    "type": "IPv4",
+    "type_title": "IPv4",
+    "base_indicator": {
+      "id": 3684237531,
+      "indicator": "45.140.17.23",
+      "type": "IPv4",
+      "title": "",
+      "description": "",
+      "content": "",
+      "access_type": "public",
+      "access_reason": ""
+    },
+    "pulse_info": {
+      "count": 48,
+      "pulses": [
+        {
+          "id": "67d7e50822755960735448a7",
+          "name": "Inside BRUTED: Black Basta (RaaS) Used Automated Brute Forcing Framework to Target Edge Network Devices",
+          "description": "Black Basta ransomware group has been using a previously unknown brute forcing framework called BRUTED since 2023. This framework automates internet scanning and credential stuffing against edge network devices, including firewalls and VPN solutions. The group targets high-impact industries, with Business Services being the most targeted sector. BRUTED enables Black Basta affiliates to scale attacks and expand their victim pool. The framework supports multiple vendors and technologies, using specialized brute-force logic for each platform. Black Basta's strategy involves exploiting edge network devices for initial access, then targeting ESXi hypervisors to maximize operational impact. The leak of internal chat logs has likely disrupted Black Basta's operations, but former members may reintegrate into other ransomware-as-a-service ecosystems.",
+          "modified": "2025-03-17T10:00:07.045000",
+          "created": "2025-03-17T09:02:00.397000",
+          "tags": [
+            "raas",
+            "ransomware",
+            "credential-stuffing",
+            "cobalt strike",
+            "firewall",
+            "vpn",
+            "edge-devices",
+            "esxi",
+            "bruted",
+            "brute ratel",
+            "brute-force"
+          ],
+          "references": [
+            "https://blog.eclecticiq.com/inside-bruted-black-basta-raas-members-used-automated-brute-forcing-framework-to-target-edge-network-devices"
+          ],
+          "public": 1,
+          "adversary": "Black Basta",
+          "targeted_countries": [
+            "Russian Federation"
+          ],
+          "malware_families": [
+            {
+              "id": "BRUTED",
+              "display_name": "BRUTED",
+              "target": null
+            },
+            {
+              "id": "Cobalt Strike - S0154",
+              "display_name": "Cobalt Strike - S0154",
+              "target": null
+            },
+            {
+              "id": "Brute Ratel",
+              "display_name": "Brute Ratel",
+              "target": null
+            },
+            "ransomware"
+          ],
+          "attack_ids": [
+            {
+              "id": "T1003",
+              "name": "OS Credential Dumping",
+              "display_name": "T1003 - OS Credential Dumping"
+            },
+            {
+              "id": "T1133",
+              "name": "External Remote Services",
+              "display_name": "T1133 - External Remote Services"
+            },
+            {
+              "id": "T1003.002",
+              "name": "Security Account Manager",
+              "display_name": "T1003.002 - Security Account Manager"
+            },
+            {
+              "id": "T1036.005",
+              "name": "Match Legitimate Name or Location",
+              "display_name": "T1036.005 - Match Legitimate Name or Location"
+            },
+            {
+              "id": "T1110.002",
+              "name": "Password Cracking",
+              "display_name": "T1110.002 - Password Cracking"
+            },
+            {
+              "id": "T1489",
+              "name": "Service Stop",
+              "display_name": "T1489 - Service Stop"
+            },
+            {
+              "id": "T1204.002",
+              "name": "Malicious File",
+              "display_name": "T1204.002 - Malicious File"
+            },
+            {
+              "id": "T1021.004",
+              "name": "SSH",
+              "display_name": "T1021.004 - SSH"
+            },
+            {
+              "id": "T1566.001",
+              "name": "Spearphishing Attachment",
+              "display_name": "T1566.001 - Spearphishing Attachment"
+            },
+            {
+              "id": "T1190",
+              "name": "Exploit Public-Facing Application",
+              "display_name": "T1190 - Exploit Public-Facing Application"
+            },
+            {
+              "id": "T1036",
+              "name": "Masquerading",
+              "display_name": "T1036 - Masquerading"
+            },
+            {
+              "id": "T1003.001",
+              "name": "LSASS Memory",
+              "display_name": "T1003.001 - LSASS Memory"
+            },
+            {
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "display_name": "T1078 - Valid Accounts"
+            },
+            {
+              "id": "T1068",
+              "name": "Exploitation for Privilege Escalation",
+              "display_name": "T1068 - Exploitation for Privilege Escalation"
+            },
+            {
+              "id": "T1110.004",
+              "name": "Credential Stuffing",
+              "display_name": "T1110.004 - Credential Stuffing"
+            },
+            {
+              "id": "T1486",
+              "name": "Data Encrypted for Impact",
+              "display_name": "T1486 - Data Encrypted for Impact"
+            },
+            {
+              "id": "T1078.002",
+              "name": "Domain Accounts",
+              "display_name": "T1078.002 - Domain Accounts"
+            },
+            {
+              "id": "T1021.001",
+              "name": "Remote Desktop Protocol",
+              "display_name": "T1021.001 - Remote Desktop Protocol"
+            },
+            {
+              "id": "T1003.003",
+              "name": "NTDS",
+              "display_name": "T1003.003 - NTDS"
+            },
+            {
+              "id": "T1078.003",
+              "name": "Local Accounts",
+              "display_name": "T1078.003 - Local Accounts"
+            }
+          ],
+          "industries": [
+            "Business Services",
+            "Industrial Machinery",
+            "Manufacturing"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 34,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "AlienVault",
+            "id": "2",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_2/resized/80/avatar_dacfad0ca8.png",
+            "is_subscribed": true,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 8,
+            "domain": 4,
+            "hostname": 7
+          },
+          "indicator_count": 19,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 307345,
+          "modified_text": "19 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 1,
+          "targeted_technology": [
+            "VPN(Virtual Private Network)"
+          ],
+          "organization": [
+            "cobaltstrike"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67b9119ab7506d46b15bac88",
+          "name": "All IP Addresses Mentioned in the BlackBasta Leak bestflowers.json",
+          "description": "",
+          "modified": "2025-03-23T22:01:52.729000",
+          "created": "2025-02-21T23:51:54.342000",
+          "tags": [],
+          "references": [
+            "https://www.bleepingcomputer.com/news/security/black-basta-ransomware-gang-s-internal-chat-logs-leak-online/"
+          ],
+          "public": 1,
+          "adversary": "BlackBasta",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 11,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BushidoToken",
+            "id": "110921",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_110921/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 163,
+          "modified_text": "12 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67dba3ff06012ee078f7e1f5",
+          "name": "Inside BRUTED: Black Basta (RaaS) Members Used Automated Brute Forcing Framework to Target Edge Network Devices",
+          "description": "",
+          "modified": "2025-03-20T05:13:35.701000",
+          "created": "2025-03-20T05:13:35.701000",
+          "tags": [
+            "raas",
+            "ransomware",
+            "credential-stuffing",
+            "cobalt strike",
+            "firewall",
+            "vpn",
+            "edge-devices",
+            "esxi",
+            "bruted",
+            "brute ratel",
+            "brute-force"
+          ],
+          "references": [
+            "https://blog.eclecticiq.com/inside-bruted-black-basta-raas-members-used-automated-brute-forcing-framework-to-target-edge-network-devices"
+          ],
+          "public": 1,
+          "adversary": "Black Basta",
+          "targeted_countries": [
+            "Russian Federation"
+          ],
+          "malware_families": [
+            {
+              "id": "BRUTED",
+              "display_name": "BRUTED",
+              "target": null
+            },
+            {
+              "id": "Cobalt Strike - S0154",
+              "display_name": "Cobalt Strike - S0154",
+              "target": null
+            },
+            {
+              "id": "Brute Ratel",
+              "display_name": "Brute Ratel",
+              "target": null
+            },
+            "ransomware"
+          ],
+          "attack_ids": [
+            {
+              "id": "T1003",
+              "name": "OS Credential Dumping",
+              "display_name": "T1003 - OS Credential Dumping"
+            },
+            {
+              "id": "T1133",
+              "name": "External Remote Services",
+              "display_name": "T1133 - External Remote Services"
+            },
+            {
+              "id": "T1003.002",
+              "name": "Security Account Manager",
+              "display_name": "T1003.002 - Security Account Manager"
+            },
+            {
+              "id": "T1036.005",
+              "name": "Match Legitimate Name or Location",
+              "display_name": "T1036.005 - Match Legitimate Name or Location"
+            },
+            {
+              "id": "T1110.002",
+              "name": "Password Cracking",
+              "display_name": "T1110.002 - Password Cracking"
+            },
+            {
+              "id": "T1489",
+              "name": "Service Stop",
+              "display_name": "T1489 - Service Stop"
+            },
+            {
+              "id": "T1204.002",
+              "name": "Malicious File",
+              "display_name": "T1204.002 - Malicious File"
+            },
+            {
+              "id": "T1021.004",
+              "name": "SSH",
+              "display_name": "T1021.004 - SSH"
+            },
+            {
+              "id": "T1566.001",
+              "name": "Spearphishing Attachment",
+              "display_name": "T1566.001 - Spearphishing Attachment"
+            },
+            {
+              "id": "T1190",
+              "name": "Exploit Public-Facing Application",
+              "display_name": "T1190 - Exploit Public-Facing Application"
+            },
+            {
+              "id": "T1036",
+              "name": "Masquerading",
+              "display_name": "T1036 - Masquerading"
+            },
+            {
+              "id": "T1003.001",
+              "name": "LSASS Memory",
+              "display_name": "T1003.001 - LSASS Memory"
+            },
+            {
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "display_name": "T1078 - Valid Accounts"
+            },
+            {
+              "id": "T1068",
+              "name": "Exploitation for Privilege Escalation",
+              "display_name": "T1068 - Exploitation for Privilege Escalation"
+            },
+            {
+              "id": "T1110.004",
+              "name": "Credential Stuffing",
+              "display_name": "T1110.004 - Credential Stuffing"
+            },
+            {
+              "id": "T1486",
+              "name": "Data Encrypted for Impact",
+              "display_name": "T1486 - Data Encrypted for Impact"
+            },
+            {
+              "id": "T1078.002",
+              "name": "Domain Accounts",
+              "display_name": "T1078.002 - Domain Accounts"
+            },
+            {
+              "id": "T1021.001",
+              "name": "Remote Desktop Protocol",
+              "display_name": "T1021.001 - Remote Desktop Protocol"
+            },
+            {
+              "id": "T1003.003",
+              "name": "NTDS",
+              "display_name": "T1003.003 - NTDS"
+            },
+            {
+              "id": "T1078.003",
+              "name": "Local Accounts",
+              "display_name": "T1078.003 - Local Accounts"
+            }
+          ],
+          "industries": [
+            "Business Services",
+            "Industrial Machinery",
+            "Manufacturing"
+          ],
+          "TLP": "white",
+          "cloned_from": "67d7e50822755960735448a7",
+          "export_count": 6,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "Tr1sa111",
+            "id": "192483",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 8,
+            "domain": 4,
+            "hostname": 7
+          },
+          "indicator_count": 19,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 180,
+          "modified_text": "16 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 1,
+          "targeted_technology": [
+            "VPN(Virtual Private Network)"
+          ],
+          "organization": [
+            "cobaltstrike"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67d7d493d490362af9fe263e",
+          "name": "Black Basta Exploits Edge Networks with Advanced Brute Force Tactics",
+          "description": "A Russian-speaking actor leaked internal chat logs of the Black Basta ransomware group on February 11, 2025, exposing their operations from September 2023 to September 2024. Researchers said the leak revealed unprecedented details about the group\u2019s tactics, infrastructure, and a previously unknown brute-forcing framework called \u201cBRUTED.\u201d",
+          "modified": "2025-03-17T07:51:47.840000",
+          "created": "2025-03-17T07:51:47.840000",
+          "tags": [
+            "black basta",
+            "bruted",
+            "raas",
+            "exploitwhispers",
+            "lapa",
+            "vpns",
+            "online",
+            "ssl certificate",
+            "esxi",
+            "protocol",
+            "february",
+            "execution",
+            "april",
+            "protect",
+            "internal",
+            "cobalt strike",
+            "psexec",
+            "turn",
+            "contact",
+            "conti"
+          ],
+          "references": [
+            "https://blog.eclecticiq.com/inside-bruted-black-basta-raas-members-used-automated-brute-forcing-framework-to-target-edge-network-devices?utm_content=327290679&utm_medium=social&utm_source=linkedin&hss_channel=lcp-10226527"
+          ],
+          "public": 1,
+          "adversary": "Black Basta",
+          "targeted_countries": [],
+          "malware_families": [
+            {
+              "id": "Conti",
+              "display_name": "Conti",
+              "target": null
+            },
+            {
+              "id": "Black Basta",
+              "display_name": "Black Basta",
+              "target": null
+            }
+          ],
+          "attack_ids": [
+            {
+              "id": "T1003",
+              "name": "OS Credential Dumping",
+              "display_name": "T1003 - OS Credential Dumping"
+            },
+            {
+              "id": "T1016",
+              "name": "System Network Configuration Discovery",
+              "display_name": "T1016 - System Network Configuration Discovery"
+            },
+            {
+              "id": "T1018",
+              "name": "Remote System Discovery",
+              "display_name": "T1018 - Remote System Discovery"
+            },
+            {
+              "id": "T1021",
+              "name": "Remote Services",
+              "display_name": "T1021 - Remote Services"
+            },
+            {
+              "id": "T1033",
+              "name": "System Owner/User Discovery",
+              "display_name": "T1033 - System Owner/User Discovery"
+            },
+            {
+              "id": "T1036",
+              "name": "Masquerading",
+              "display_name": "T1036 - Masquerading"
+            },
+            {
+              "id": "T1046",
+              "name": "Network Service Scanning",
+              "display_name": "T1046 - Network Service Scanning"
+            },
+            {
+              "id": "T1048",
+              "name": "Exfiltration Over Alternative Protocol",
+              "display_name": "T1048 - Exfiltration Over Alternative Protocol"
+            },
+            {
+              "id": "T1049",
+              "name": "System Network Connections Discovery",
+              "display_name": "T1049 - System Network Connections Discovery"
+            },
+            {
+              "id": "T1059",
+              "name": "Command and Scripting Interpreter",
+              "display_name": "T1059 - Command and Scripting Interpreter"
+            },
+            {
+              "id": "T1068",
+              "name": "Exploitation for Privilege Escalation",
+              "display_name": "T1068 - Exploitation for Privilege Escalation"
+            },
+            {
+              "id": "T1070",
+              "name": "Indicator Removal on Host",
+              "display_name": "T1070 - Indicator Removal on Host"
+            },
+            {
+              "id": "T1071",
+              "name": "Application Layer Protocol",
+              "display_name": "T1071 - Application Layer Protocol"
+            },
+            {
+              "id": "T1078",
+              "name": "Valid Accounts",
+              "display_name": "T1078 - Valid Accounts"
+            },
+            {
+              "id": "T1083",
+              "name": "File and Directory Discovery",
+              "display_name": "T1083 - File and Directory Discovery"
+            },
+            {
+              "id": "T1087",
+              "name": "Account Discovery",
+              "display_name": "T1087 - Account Discovery"
+            },
+            {
+              "id": "T1090",
+              "name": "Proxy",
+              "display_name": "T1090 - Proxy"
+            },
+            {
+              "id": "T1095",
+              "name": "Non-Application Layer Protocol",
+              "display_name": "T1095 - Non-Application Layer Protocol"
+            },
+            {
+              "id": "T1105",
+              "name": "Ingress Tool Transfer",
+              "display_name": "T1105 - Ingress Tool Transfer"
+            },
+            {
+              "id": "T1110",
+              "name": "Brute Force",
+              "display_name": "T1110 - Brute Force"
+            },
+            {
+              "id": "T1133",
+              "name": "External Remote Services",
+              "display_name": "T1133 - External Remote Services"
+            },
+            {
+              "id": "T1135",
+              "name": "Network Share Discovery",
+              "display_name": "T1135 - Network Share Discovery"
+            },
+            {
+              "id": "T1190",
+              "name": "Exploit Public-Facing Application",
+              "display_name": "T1190 - Exploit Public-Facing Application"
+            },
+            {
+              "id": "T1201",
+              "name": "Password Policy Discovery",
+              "display_name": "T1201 - Password Policy Discovery"
+            },
+            {
+              "id": "T1204",
+              "name": "User Execution",
+              "display_name": "T1204 - User Execution"
+            },
+            {
+              "id": "T1210",
+              "name": "Exploitation of Remote Services",
+              "display_name": "T1210 - Exploitation of Remote Services"
+            },
+            {
+              "id": "T1217",
+              "name": "Browser Bookmark Discovery",
+              "display_name": "T1217 - Browser Bookmark Discovery"
+            },
+            {
+              "id": "T1219",
+              "name": "Remote Access Software",
+              "display_name": "T1219 - Remote Access Software"
+            },
+            {
+              "id": "T1482",
+              "name": "Domain Trust Discovery",
+              "display_name": "T1482 - Domain Trust Discovery"
+            },
+            {
+              "id": "T1486",
+              "name": "Data Encrypted for Impact",
+              "display_name": "T1486 - Data Encrypted for Impact"
+            },
+            {
+              "id": "T1489",
+              "name": "Service Stop",
+              "display_name": "T1489 - Service Stop"
+            },
+            {
+              "id": "T1490",
+              "name": "Inhibit System Recovery",
+              "display_name": "T1490 - Inhibit System Recovery"
+            },
+            {
+              "id": "T1518",
+              "name": "Software Discovery",
+              "display_name": "T1518 - Software Discovery"
+            },
+            {
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "display_name": "T1543 - Create or Modify System Process"
+            },
+            {
+              "id": "T1547",
+              "name": "Boot or Logon Autostart Execution",
+              "display_name": "T1547 - Boot or Logon Autostart Execution"
+            },
+            {
+              "id": "T1562",
+              "name": "Impair Defenses",
+              "display_name": "T1562 - Impair Defenses"
+            },
+            {
+              "id": "T1566",
+              "name": "Phishing",
+              "display_name": "T1566 - Phishing"
+            },
+            {
+              "id": "T1567",
+              "name": "Exfiltration Over Web Service",
+              "display_name": "T1567 - Exfiltration Over Web Service"
+            },
+            {
+              "id": "T1568",
+              "name": "Dynamic Resolution",
+              "display_name": "T1568 - Dynamic Resolution"
+            },
+            {
+              "id": "T1572",
+              "name": "Protocol Tunneling",
+              "display_name": "T1572 - Protocol Tunneling"
+            },
+            {
+              "id": "T1573",
+              "name": "Encrypted Channel",
+              "display_name": "T1573 - Encrypted Channel"
+            },
+            {
+              "id": "T1590",
+              "name": "Gather Victim Network Information",
+              "display_name": "T1590 - Gather Victim Network Information"
+            },
+            {
+              "id": "T1595",
+              "name": "Active Scanning",
+              "display_name": "T1595 - Active Scanning"
+            },
+            {
+              "id": "T1195",
+              "name": "Supply Chain Compromise",
+              "display_name": "T1195 - Supply Chain Compromise"
+            },
+            {
+              "id": "T1102",
+              "name": "Web Service",
+              "display_name": "T1102 - Web Service"
+            },
+            {
+              "id": "T1218",
+              "name": "Signed Binary Proxy Execution",
+              "display_name": "T1218 - Signed Binary Proxy Execution"
+            },
+            {
+              "id": "T1204",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Industrial",
+            "Manufacturing",
+            "Financial"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 8,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "Superpro",
+            "id": "61676",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 8,
+            "domain": 6,
+            "hostname": 7
+          },
+          "indicator_count": 21,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 172,
+          "modified_text": "19 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 1,
+          "targeted_technology": [
+            "SSSL(Secure Sockets Layer)"
+          ],
+          "organization": [
+            "cobaltstrike"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67d5e1112c316ec5654f7635",
+          "name": "Black Basta Ransomware Use Brute Force Tactics to Exploit  Edge Devices",
+          "description": "",
+          "modified": "2025-03-15T20:20:33.322000",
+          "created": "2025-03-15T20:20:33.322000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "cryptocti",
+            "id": "110256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_110256/resized/80/avatar_e237a4257c.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 3
+          },
+          "indicator_count": 3,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 356,
+          "modified_text": "21 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 1,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67cfa498f43735a155da5926",
+          "name": "BlackBasta Leaked Chats: Compilation of Exposed IPv4 Indicators",
+          "description": "A look back at some of the key words and phrases that have been used to describe people in recent years: \"Snobs\" or \"rejects\", as they have become known in the past.",
+          "modified": "2025-03-11T02:48:55.083000",
+          "created": "2025-03-11T02:48:55.083000",
+          "tags": [
+            "Ransomeware",
+            "APT",
+            "Malware"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "BlackBasta",
+          "targeted_countries": [],
+          "malware_families": [
+            {
+              "id": "BlackBasta",
+              "display_name": "BlackBasta",
+              "target": null
+            },
+            "malware"
+          ],
+          "attack_ids": [
+            {
+              "id": "T1059",
+              "name": "Command and Scripting Interpreter",
+              "display_name": "T1059 - Command and Scripting Interpreter"
+            },
+            {
+              "id": "T1543",
+              "name": "Create or Modify System Process",
+              "display_name": "T1543 - Create or Modify System Process"
+            }
+          ],
+          "industries": [
+            "Healthcare",
+            "Financial",
+            "Government",
+            "Education",
+            "Media"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 7,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "CybersecurityReach",
+            "id": "311893",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_311893/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 3632,
+            "URL": 28
+          },
+          "indicator_count": 3660,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 1,
+          "modified_text": "25 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 1,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "63456c2a30b92337ea1670e0",
+          "name": "IOC Records Provided by @NextRayAI",
+          "description": "This IOC report provided and daily updated by NextRay AI Detection & Response Inc.",
+          "modified": "2024-07-16T20:30:56.084000",
+          "created": "2022-10-11T13:14:18.676000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 1318,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "NextRay-AI",
+            "id": "210822",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 260,
+          "modified_text": "263 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "65f5828f8217ecbe6ce3a89b",
+          "name": "IOCs Industriales",
+          "description": "",
+          "modified": "2024-03-16T11:29:19.302000",
+          "created": "2024-03-16T11:29:19.302000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 78,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "dtatov00",
+            "id": "256758",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 40,
+          "modified_text": "385 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "65f5827a4e23b095e5af5f44",
+          "name": "IOCs Industriales",
+          "description": "",
+          "modified": "2024-03-16T11:28:58.984000",
+          "created": "2024-03-16T11:28:58.984000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 19,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "dtatov00",
+            "id": "256758",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 38,
+          "modified_text": "385 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "65f582700d35b0e7c8dd9df8",
+          "name": "IOCs Industriales",
+          "description": "",
+          "modified": "2024-03-16T11:28:48.062000",
+          "created": "2024-03-16T11:28:48.062000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 28,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "dtatov00",
+            "id": "256758",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 37,
+          "modified_text": "385 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "65f5823b9d7bc6b422256296",
+          "name": "IOCs Industriales",
+          "description": "",
+          "modified": "2024-03-16T11:27:55.808000",
+          "created": "2024-03-16T11:27:55.808000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 28,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "dtatov00",
+            "id": "256758",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 34,
+          "modified_text": "385 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "648cdb6f372c1b7a4220002f",
+          "name": "ETIC Cybersecurity 2023-06-17 Port Scan",
+          "description": "",
+          "modified": "2024-01-01T00:04:40.429000",
+          "created": "2023-06-16T22:00:14.794000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 18,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "EticCybersecurity",
+            "id": "205841",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_205841/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 477,
+          "modified_text": "460 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "652329b50dd9645c69adf49c",
+          "name": "IOCs - 20231081422 - ANIA Threat Feeds - IP Segment 4",
+          "description": "ANIA Collector - Advanced Network Interactive Analysis Collector - Collected from Internet Storm Center IOCs List",
+          "modified": "2023-11-07T22:02:18.651000",
+          "created": "2023-10-08T22:14:13.096000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 20,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "AlessandroFiori",
+            "id": "91912",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_91912/resized/80/avatar_2b1b2b88b6.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 396,
+          "modified_text": "514 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e7995af8d4a3461031898b",
+          "name": "IOC Records \u2192Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-10-02T00:00:29.692000",
+          "created": "2023-08-24T17:54:34.404000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 28,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 200,
+          "modified_text": "551 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "6507dcf477ef9466c2de35e3",
+          "name": "HIVE           (Pulse created by RVS_i_am)",
+          "description": "For more information, please see:\n\nContact info: wnd5xkus@duck.com / kcqhf2ok@duck.com (Email & Phone has 'not been very effective' means of communication)\nTwitter: @NorrisN60014\nDiscord: inawj_2\nMastadon: Disable_Duck@nerdculture.de\n\nOther:\nAlienVault: DISABLE_DUCK\nFileScan: DISABLE_DUCK\nMetadefender: red_snow_ak3jzram",
+          "modified": "2023-09-18T05:15:32.926000",
+          "created": "2023-09-18T05:15:32.926000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "64fa30d707f35d3c9d8bd1cd",
+          "export_count": 43,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 198,
+          "modified_text": "565 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "6507dcf100d8bde09b555013",
+          "name": "HIVE           (Pulse created by RVS_i_am)",
+          "description": "",
+          "modified": "2023-09-18T05:15:29.671000",
+          "created": "2023-09-18T05:15:29.671000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "64fa30d707f35d3c9d8bd1cd",
+          "export_count": 12,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 194,
+          "modified_text": "565 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa30d7bc2e4d93884b2a4c",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:21:43.678000",
+          "created": "2023-09-07T20:21:43.678000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 16,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 38,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa30d707f35d3c9d8bd1cd",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:21:43.271000",
+          "created": "2023-09-07T20:21:43.271000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 38,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa30cce362cbd8ba18c887",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:21:32.701000",
+          "created": "2023-09-07T20:21:32.701000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 22,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 36,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa30c8b0f038985fbce564",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:21:28.946000",
+          "created": "2023-09-07T20:21:28.946000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 8,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 37,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa30b1c5599ae3fd943671",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:21:05.125000",
+          "created": "2023-09-07T20:21:05.125000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 37,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa30a3429961426a8c9f3f",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:20:51.389000",
+          "created": "2023-09-07T20:20:51.389000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 8,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 37,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa309b486cb2d0cacbc33e",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:20:43.518000",
+          "created": "2023-09-07T20:20:43.518000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 8,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 38,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa309b8869335d1a9e6293",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:20:43.122000",
+          "created": "2023-09-07T20:20:43.122000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 36,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa3090d3eb1de3bad58767",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:20:32.583000",
+          "created": "2023-09-07T20:20:32.583000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 8,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 38,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64fa308c07f35d3c9d8bd1cc",
+          "name": "HIVE",
+          "description": "",
+          "modified": "2023-09-07T20:20:28.541000",
+          "created": "2023-09-07T20:20:28.541000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "RVS_i_am",
+            "id": "251642",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 37,
+          "modified_text": "576 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e799845f4ca1eaee3b9957",
+          "name": "IOC Records \u2192Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:55:16.165000",
+          "created": "2023-08-24T17:55:16.165000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 19,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 196,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e79960d336b6a4b53c561e",
+          "name": "IOC Records \u2192Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:54:40.425000",
+          "created": "2023-08-24T17:54:40.425000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 11,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 193,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e7995f5e8231aa87cdddc5",
+          "name": "IOC Records \u2192Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:54:39.765000",
+          "created": "2023-08-24T17:54:39.765000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 16,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 193,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e7995ece1da1e24e444a27",
+          "name": "IOC Records \u2192Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:54:38.909000",
+          "created": "2023-08-24T17:54:38.909000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 11,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 197,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e799540d4697a46f8f230c",
+          "name": "IOC Records \u2192Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:54:28.757000",
+          "created": "2023-08-24T17:54:28.757000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 194,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e799240e77a37a1a1fd255",
+          "name": "IOC Records \u2192 Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:53:40.054000",
+          "created": "2023-08-24T17:53:40.054000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 10,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 194,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e79923528ad3eb11ea884c",
+          "name": "IOC Records \u2192 Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:53:39.444000",
+          "created": "2023-08-24T17:53:39.444000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 11,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 193,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e7992247e0b22db4bd642a",
+          "name": "IOC Records \u2192 Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:53:38.528000",
+          "created": "2023-08-24T17:53:38.528000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 10,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 194,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e7991e0e88ef39bef95a12",
+          "name": "IOC Records \u2192 Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:53:34.071000",
+          "created": "2023-08-24T17:53:34.071000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 19,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 194,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e79918d81a265ff4d3d514",
+          "name": "IOC Records \u2192 Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:53:28.601000",
+          "created": "2023-08-24T17:53:28.601000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 10,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 195,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64e7990cbf87cda6c38013cf",
+          "name": "IOC Records \u2192 Provided by @NextRayAI",
+          "description": "",
+          "modified": "2023-08-24T17:53:16.082000",
+          "created": "2023-08-24T17:53:16.082000",
+          "tags": [
+            "Nextray",
+            "cyber security",
+            "ioc",
+            "phishing",
+            "malicious"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "United States of America",
+            "Turkey",
+            "Ukraine",
+            "Romania",
+            "Czechia",
+            "United Kingdom of Great Britain and Northern Ireland",
+            "Norway",
+            "Lithuania",
+            "Estonia",
+            "Latvia",
+            "Poland",
+            "Germany",
+            "Canada",
+            "France",
+            "Denmark"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1566",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Defense",
+            "Industrial",
+            "Government"
+          ],
+          "TLP": "white",
+          "cloned_from": "63456c2a30b92337ea1670e0",
+          "export_count": 10,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "OctoSeek",
+            "id": "243548",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_243548/resized/80/avatar_3b9c358f36.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "domain": 493080,
+            "IPv4": 3458,
+            "IPv6": 519,
+            "hostname": 41105,
+            "URL": 155223,
+            "CIDR": 5266
+          },
+          "indicator_count": 698651,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 196,
+          "modified_text": "590 days ago ",
+          "is_modified": false,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "nextray"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64bb388c68c393fc3c0c525b",
+          "name": "IOCs - 20237211810 - ANIA Threat Feeds - IP Segment 6",
+          "description": "ANIA Collector - Advanced Network Interactive Analysis Collector - Collected from Internet Storm Center IOCs List",
+          "modified": "2023-08-21T02:04:06.774000",
+          "created": "2023-07-22T02:01:48.924000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 22,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "AlessandroFiori",
+            "id": "91912",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_91912/resized/80/avatar_2b1b2b88b6.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 399,
+          "modified_text": "593 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64719de2a68c138d207b25cd",
+          "name": "LCIA:HoneyNet:2023",
+          "description": "Louisiana Cyber Investigators Alliance (LCIA): HoneyPot Suricata Log: 2023 A unified coordinated group of federal, state, local law enforcement, as well as LA ESF-17 members, focused onsafeguarding Louisiana's networks through collaborative vigilance and thorough investigations http://www.la-safe.org",
+          "modified": "2023-07-23T12:04:51.473000",
+          "created": "2023-05-27T06:06:26.480000",
+          "tags": [
+            "tsec",
+            "tpot19",
+            "honeypot",
+            "la-safe.org"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 32,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "ladarrellmiller",
+            "id": "111524",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 299,
+          "modified_text": "622 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "tsec"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [
+            "tpot19",
+            "honeypot"
+          ],
+          "targeted_protocol": []
+        },
+        {
+          "id": "6471fffd91a27f89e504af6b",
+          "name": "LCIA:HoneyNet:2023",
+          "description": "Louisiana Cyber Investigators Alliance (LCIA): HoneyPot Suricata Log: 2023 A unified coordinated group of federal, state, local law enforcement, as well as LA ESF-17 members, focused onsafeguarding Louisiana's networks through collaborative vigilance and thorough investigations http://www.la-safe.org",
+          "modified": "2023-07-23T12:04:51.473000",
+          "created": "2023-05-27T13:05:01.226000",
+          "tags": [
+            "tsec",
+            "tpot19",
+            "honeypot",
+            "la-safe.org"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 12,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "dm_lacia",
+            "id": "132921",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 236,
+          "modified_text": "622 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "tsec"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [
+            "tpot19",
+            "honeypot"
+          ],
+          "targeted_protocol": []
+        },
+        {
+          "id": "6477df83e2d749451aec9670",
+          "name": "LCIA:HoneyNet:June 2023",
+          "description": "Louisiana Cyber Investigators Alliance (LCIA): HoneyPot Suricata Log: 2023 A unified coordinated group of federal, state, local law enforcement, as well as LA ESF-17 members, focused onsafeguarding Louisiana's networks through collaborative vigilance and thorough investigations http://www.la-safe.org",
+          "modified": "2023-07-23T12:04:51.473000",
+          "created": "2023-06-01T00:00:02.869000",
+          "tags": [
+            "tsec",
+            "tpot19",
+            "honeypot",
+            "la-safe.org"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 26,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "ladarrellmiller",
+            "id": "111524",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 290,
+          "modified_text": "622 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "tsec"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [
+            "tpot19",
+            "honeypot"
+          ],
+          "targeted_protocol": []
+        },
+        {
+          "id": "6477df840523835b3393cdb0",
+          "name": "LCIA:HoneyNet:June 2023",
+          "description": "Louisiana Cyber Investigators Alliance (LCIA): HoneyPot Suricata Log: 2023 A unified coordinated group of federal, state, local law enforcement, as well as LA ESF-17 members, focused onsafeguarding Louisiana's networks through collaborative vigilance and thorough investigations http://www.la-safe.org",
+          "modified": "2023-07-23T12:04:51.473000",
+          "created": "2023-06-01T00:00:04.677000",
+          "tags": [
+            "tsec",
+            "tpot19",
+            "honeypot",
+            "la-safe.org"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 20,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "dm_lacia",
+            "id": "132921",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 228,
+          "modified_text": "622 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [
+            "tsec"
+          ],
+          "targeted_botnet": [],
+          "targeted_honeypot": [
+            "tpot19",
+            "honeypot"
+          ],
+          "targeted_protocol": []
+        },
+        {
+          "id": "649223cf9bff7abd7126958c",
+          "name": "Scan port 3389 RDP (S3#)",
+          "description": "Scans hitting the server at TCP port 3389 RDP. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-07-20T22:02:23.735000",
+          "created": "2023-06-20T22:10:23.340000",
+          "tags": [
+            "tcp",
+            "RDP",
+            "win",
+            "windows",
+            "admin",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 10,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "624 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [
+            "windows"
+          ],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "rdp"
+          ]
+        },
+        {
+          "id": "648ae23a42c2bf146a740234",
+          "name": "Scan port 8080 HTTP and proxy (S3#)",
+          "description": "Scans hitting the server at TCP port 8080 HTTP and PROXY. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-07-15T10:02:26.021000",
+          "created": "2023-06-15T10:04:42.066000",
+          "tags": [
+            "tcp",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 19,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2677,
+          "modified_text": "630 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp"
+          ]
+        },
+        {
+          "id": "64859c638e1cd0876f2c32cd",
+          "name": "Scan port 135 DCOM RPC (S3#)",
+          "description": "Scans hitting the server at TCP port 135 DCOM RPC. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-07-11T10:00:29.127000",
+          "created": "2023-06-11T10:05:23.063000",
+          "tags": [
+            "tcp",
+            "udp",
+            "DCOM",
+            "RPC",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 30,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "634 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "udp",
+            "dcom",
+            "rpc"
+          ]
+        },
+        {
+          "id": "647e5cfca3edb60a69906df5",
+          "name": "Scan port 3389 RDP (S3#)",
+          "description": "Scans hitting the server at TCP port 3389 RDP. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-07-05T22:02:12.222000",
+          "created": "2023-06-05T22:09:00.346000",
+          "tags": [
+            "tcp",
+            "RDP",
+            "win",
+            "windows",
+            "admin",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 13,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "639 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [
+            "windows"
+          ],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "rdp"
+          ]
+        },
+        {
+          "id": "647e49262a2932d21a2be575",
+          "name": "IOCs - 2023651316 - ANIA Threat Feeds - IP Segment 7",
+          "description": "ANIA Collector - Advanced Network Interactive Analysis Collector - Collected from Internet Storm Center IOCs List",
+          "modified": "2023-07-05T20:01:39.023000",
+          "created": "2023-06-05T20:44:22.844000",
+          "tags": [],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 19,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "AlessandroFiori",
+            "id": "91912",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_91912/resized/80/avatar_2b1b2b88b6.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 400,
+          "modified_text": "640 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64727f2e5f1bba88c6d1fae3",
+          "name": "Scan port 81 Skype (S3#)",
+          "description": "Scans hitting the server at TCP port 81 Skype. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-06-26T22:04:37.538000",
+          "created": "2023-05-27T22:07:42.310000",
+          "tags": [
+            "tcp",
+            "Skype",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "648 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [
+            "skype"
+          ],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp"
+          ]
+        }
+      ],
+      "references": [
+        "https://www.bleepingcomputer.com/news/security/black-basta-ransomware-gang-s-internal-chat-logs-leak-online/",
+        "https://blog.eclecticiq.com/inside-bruted-black-basta-raas-members-used-automated-brute-forcing-framework-to-target-edge-network-devices",
+        "https://blog.eclecticiq.com/inside-bruted-black-basta-raas-members-used-automated-brute-forcing-framework-to-target-edge-network-devices?utm_content=327290679&utm_medium=social&utm_source=linkedin&hss_channel=lcp-10226527"
+      ],
+      "related": {
+        "alienvault": {
+          "adversary": [
+            "Black Basta"
+          ],
+          "malware_families": [
+            "Bruted",
+            "Cobalt strike - s0154",
+            "Brute ratel"
+          ],
+          "industries": [
+            "Industrial machinery",
+            "Business services",
+            "Manufacturing"
+          ]
+        },
+        "other": {
+          "adversary": [
+            "Black Basta",
+            "BlackBasta"
+          ],
+          "malware_families": [
+            "Black basta",
+            "Bruted",
+            "Blackbasta",
+            "Cobalt strike - s0154",
+            "Brute ratel",
+            "Conti"
+          ],
+          "industries": [
+            "Media",
+            "Financial",
+            "Defense",
+            "Healthcare",
+            "Government",
+            "Industrial machinery",
+            "Education",
+            "Industrial",
+            "Business services",
+            "Manufacturing"
+          ]
+        }
+      }
+    },
+    "false_positive": [],
+    "validation": [],
+    "asn": "AS50340 ooo network of data-centers selectel",
+    "city_data": true,
+    "city": null,
+    "region": null,
+    "continent_code": "EU",
+    "country_code3": "RUS",
+    "country_code2": "RU",
+    "subdivision": null,
+    "latitude": 55.7386,
+    "postal_code": null,
+    "longitude": 37.6068,
+    "accuracy_radius": 1000,
+    "country_code": "RU",
+    "country_name": "Russian Federation",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/ru.png",
+    "flag_title": "Russian Federation",
+    "sections": [
+      "general",
+      "geo",
+      "reputation",
+      "url_list",
+      "passive_dns",
+      "malware",
+      "nids_list",
+      "http_scans"
+    ]
+  },
+  "reputation": {
+    "reputation": null
+  },
+  "geo": {
+    "asn": "AS50340 ooo network of data-centers selectel",
+    "city_data": true,
+    "city": null,
+    "region": null,
+    "continent_code": "EU",
+    "country_code3": "RUS",
+    "country_code2": "RU",
+    "subdivision": null,
+    "latitude": 55.7386,
+    "postal_code": null,
+    "longitude": 37.6068,
+    "accuracy_radius": 1000,
+    "country_code": "RU",
+    "country_name": "Russian Federation",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/ru.png",
+    "flag_title": "Russian Federation"
+  },
+  "malware": {
+    "data": [
+      {
+        "datetime_int": 1576723026,
+        "hash": "f9b98fc48f835e41fa03622ae564a120c4e8533db9255ee9afb82d44f35583be",
+        "detections": {
+          "avast": "ELF:Mirai-ACU\\ [Trj]",
+          "avg": null,
+          "clamav": "Unix.Trojan.Mirai-5932143-0",
+          "msdefender": "Backdoor:Linux/Mirai.B"
+        },
+        "date": "2019-12-19T02:37:06"
+      }
+    ],
+    "size": 1,
+    "count": 1
+  },
+  "url_list": {
+    "url_list": [
+      {
+        "url": "http://45.140.17.23/",
+        "date": "2025-03-19T19:54:43",
+        "domain": "",
+        "hostname": "45.140.17.23",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "http%3A//45.140.17.23/"
+      },
+      {
+        "url": "https://45.140.17.23",
+        "date": "2023-05-27T22:07:42",
+        "domain": "",
+        "hostname": "45.140.17.23",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "https%3A//45.140.17.23"
+      },
+      {
+        "url": "http://45.140.17.23",
+        "date": "2023-05-27T22:07:42",
+        "domain": "",
+        "hostname": "45.140.17.23",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "http%3A//45.140.17.23"
+      }
+    ],
+    "page_num": 1,
+    "limit": 10,
+    "paged": true,
+    "has_next": false,
+    "full_size": 3,
+    "actual_size": 3
+  },
+  "passive_dns": {
+    "passive_dns": [
+      {
+        "address": "45.140.17.23",
+        "first": "2024-01-27T02:14:27",
+        "last": "2024-01-27T02:14:27",
+        "hostname": "mantea.network",
+        "record_type": "A",
+        "indicator_link": "/indicator/domain/mantea.network",
+        "flag_url": "assets/images/flags/ru.png",
+        "flag_title": "Russia",
+        "asset_type": "domain",
+        "asn": "AS50340 ooo network of data-centers selectel"
+      },
+      {
+        "address": "45.140.17.23",
+        "first": "2024-01-27T01:01:02",
+        "last": "2024-01-27T02:14:27",
+        "hostname": "mankta.network",
+        "record_type": "A",
+        "indicator_link": "/indicator/domain/mankta.network",
+        "flag_url": "assets/images/flags/ru.png",
+        "flag_title": "Russia",
+        "asset_type": "domain",
+        "asn": "AS50340 ooo network of data-centers selectel"
+      },
+      {
+        "address": "45.140.17.23",
+        "first": "2024-01-23T08:58:37",
+        "last": "2024-01-27T02:03:21",
+        "hostname": "mantad.network",
+        "record_type": "A",
+        "indicator_link": "/indicator/domain/mantad.network",
+        "flag_url": "assets/images/flags/ru.png",
+        "flag_title": "Russia",
+        "asset_type": "domain",
+        "asn": "AS50340 ooo network of data-centers selectel"
+      }
+    ],
+    "count": 3
+  }
+}

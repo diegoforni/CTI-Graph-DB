@@ -1,0 +1,548 @@
+{
+  "general": {
+    "whois": "http://whois.domaintools.com/193.68.89.31",
+    "reputation": 0,
+    "indicator": "193.68.89.31",
+    "type": "IPv4",
+    "type_title": "IPv4",
+    "base_indicator": {
+      "id": 4033753718,
+      "indicator": "193.68.89.31",
+      "type": "IPv4",
+      "title": "",
+      "description": "",
+      "content": "",
+      "access_type": "public",
+      "access_reason": ""
+    },
+    "pulse_info": {
+      "count": 6,
+      "pulses": [
+        {
+          "id": "66794486bda6c3cf8823c604",
+          "name": "TCP active portscan",
+          "description": "This pulse contains hourly updated list of detected scanning hosts performing active portscan, also known as service probing. Notably, this activity requires TCP 3WHS to be established, therefore data published can't be forged.",
+          "modified": "2025-04-05T03:27:57.698000",
+          "created": "2024-06-24T10:03:50.698000",
+          "tags": [
+            "portscan",
+            ""
+          ],
+          "references": [
+            ""
+          ],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "Poland",
+            "Sweden"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Telecommunications"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 72343,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "skhron-soc",
+            "id": "279660",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 39603,
+            "IPv6": 5
+          },
+          "indicator_count": 39608,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 500,
+          "modified_text": "1 minute ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "5a64f74f0e543738c12bc973",
+          "name": "Webscanners with Bad Requests - HTTP Status 400 - 1/20/2018 thru current day",
+          "description": "Webscanners who&amp;amp;amp;#39;s requests resulted in HTTP Status code 400 due to WAF rules or LB parsing issues",
+          "modified": "2025-04-05T03:25:24.070000",
+          "created": "2018-01-21T20:25:51.668000",
+          "tags": [
+            "webscanner",
+            "bruteforce",
+            "badrequest",
+            "probing",
+            "webscan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            },
+            {
+              "id": "T1110",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 173532,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "david3",
+            "id": "2807",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/david3/resized/80/fireball-dwf.jpg",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 47679
+          },
+          "indicator_count": 47679,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2412,
+          "modified_text": "3 minutes ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 1,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67c0e1fd1d10f9d1cf3f9848",
+          "name": "Scan port 8080 HTTP and proxy (S3#)",
+          "description": "Scans hitting the server at TCP port 8080 HTTP and PROXY. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2025-03-29T22:03:03.405000",
+          "created": "2025-02-27T22:06:53.201000",
+          "tags": [
+            "tcp",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 9,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2675,
+          "modified_text": "6 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp"
+          ]
+        },
+        {
+          "id": "67ad1b2f9f8d68c697d56411",
+          "name": "Scan port 8080 HTTP and proxy (S3#)",
+          "description": "Scans hitting the server at TCP port 8080 HTTP and PROXY. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2025-03-14T22:04:01.957000",
+          "created": "2025-02-12T22:05:35.051000",
+          "tags": [
+            "tcp",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 10,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2675,
+          "modified_text": "21 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp"
+          ]
+        },
+        {
+          "id": "67a8759fca6301b2cd482807",
+          "name": "Threat IPs 2025-02-09",
+          "description": "Lista de direcciones IP atacantes detectadas en las ultimas 24 horas.",
+          "modified": "2025-03-11T09:05:58.212000",
+          "created": "2025-02-09T09:30:07.282000",
+          "tags": [
+            "Threat Intelligence",
+            "IP Maliciosa"
+          ],
+          "references": [
+            "https://example.com"
+          ],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 12,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "sec_service",
+            "id": "307400",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 16,
+          "modified_text": "24 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67a28f351236ebe1bf02c37d",
+          "name": "Scan port 8080 HTTP and proxy (S3#)",
+          "description": "Scans hitting the server at TCP port 8080 HTTP and PROXY. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2025-03-06T22:04:27.444000",
+          "created": "2025-02-04T22:05:41.426000",
+          "tags": [
+            "tcp",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 10,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2675,
+          "modified_text": "29 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp"
+          ]
+        }
+      ],
+      "references": [
+        "",
+        "https://example.com"
+      ],
+      "related": {
+        "alienvault": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": []
+        },
+        "other": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": [
+            "Telecommunications"
+          ]
+        }
+      }
+    },
+    "false_positive": [],
+    "validation": [],
+    "asn": "AS8285 versia ltd",
+    "city_data": true,
+    "city": "Riga",
+    "region": "RIX",
+    "continent_code": "EU",
+    "country_code3": "LVA",
+    "country_code2": "LV",
+    "subdivision": "RIX",
+    "latitude": 56.9496,
+    "postal_code": "LV-1058",
+    "longitude": 24.0978,
+    "accuracy_radius": 20,
+    "country_code": "LV",
+    "country_name": "Latvia",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/lv.png",
+    "flag_title": "Latvia",
+    "sections": [
+      "general",
+      "geo",
+      "reputation",
+      "url_list",
+      "passive_dns",
+      "malware",
+      "nids_list",
+      "http_scans"
+    ]
+  },
+  "reputation": {
+    "reputation": null
+  },
+  "geo": {
+    "asn": "AS8285 versia ltd",
+    "city_data": true,
+    "city": "Riga",
+    "region": "RIX",
+    "continent_code": "EU",
+    "country_code3": "LVA",
+    "country_code2": "LV",
+    "subdivision": "RIX",
+    "latitude": 56.9496,
+    "postal_code": "LV-1058",
+    "longitude": 24.0978,
+    "accuracy_radius": 20,
+    "country_code": "LV",
+    "country_name": "Latvia",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/lv.png",
+    "flag_title": "Latvia"
+  },
+  "malware": {
+    "data": [],
+    "size": 0,
+    "count": 0
+  },
+  "url_list": {
+    "url_list": [
+      {
+        "url": "https://193.68.89.31",
+        "date": "2025-02-05T16:22:13",
+        "domain": "",
+        "hostname": "193.68.89.31",
+        "encoded": "https%3A//193.68.89.31"
+      },
+      {
+        "url": "http://193.68.89.31",
+        "date": "2025-02-05T16:22:13",
+        "domain": "",
+        "hostname": "193.68.89.31",
+        "encoded": "http%3A//193.68.89.31"
+      }
+    ],
+    "page_num": 1,
+    "limit": 10,
+    "paged": true,
+    "has_next": false,
+    "full_size": 2,
+    "actual_size": 2
+  },
+  "passive_dns": {
+    "passive_dns": [],
+    "count": 0
+  }
+}

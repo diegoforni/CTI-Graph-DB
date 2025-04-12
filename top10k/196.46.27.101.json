@@ -1,0 +1,247 @@
+{
+  "general": {
+    "whois": "http://whois.domaintools.com/196.46.27.101",
+    "reputation": 0,
+    "indicator": "196.46.27.101",
+    "type": "IPv4",
+    "type_title": "IPv4",
+    "base_indicator": {
+      "id": 3511791217,
+      "indicator": "196.46.27.101",
+      "type": "IPv4",
+      "title": "",
+      "description": "",
+      "content": "",
+      "access_type": "public",
+      "access_reason": ""
+    },
+    "pulse_info": {
+      "count": 1,
+      "pulses": [
+        {
+          "id": "62cbf91296639e9dd531846b",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2022-08-10T10:02:10.866000",
+          "created": "2022-07-11T10:18:58.843000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 4,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "969 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        }
+      ],
+      "references": [],
+      "related": {
+        "alienvault": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": []
+        },
+        "other": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": []
+        }
+      }
+    },
+    "false_positive": [],
+    "validation": [],
+    "asn": "AS37207 african network information center",
+    "city_data": true,
+    "city": "Abuja",
+    "region": "FC",
+    "continent_code": "AF",
+    "country_code3": "NGA",
+    "country_code2": "NG",
+    "subdivision": "FC",
+    "latitude": 9.0833,
+    "postal_code": null,
+    "longitude": 7.5333,
+    "accuracy_radius": 50,
+    "country_code": "NG",
+    "country_name": "Nigeria",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/ng.png",
+    "flag_title": "Nigeria",
+    "sections": [
+      "general",
+      "geo",
+      "reputation",
+      "url_list",
+      "passive_dns",
+      "malware",
+      "nids_list",
+      "http_scans"
+    ]
+  },
+  "reputation": {
+    "reputation": null
+  },
+  "geo": {
+    "asn": "AS37207 african network information center",
+    "city_data": true,
+    "city": "Abuja",
+    "region": "FC",
+    "continent_code": "AF",
+    "country_code3": "NGA",
+    "country_code2": "NG",
+    "subdivision": "FC",
+    "latitude": 9.0833,
+    "postal_code": null,
+    "longitude": 7.5333,
+    "accuracy_radius": 50,
+    "country_code": "NG",
+    "country_name": "Nigeria",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/ng.png",
+    "flag_title": "Nigeria"
+  },
+  "malware": {
+    "data": [],
+    "size": 0,
+    "count": 0
+  },
+  "url_list": {
+    "url_list": [
+      {
+        "url": "http://196.46.27.101/",
+        "date": "2024-10-28T00:28:26",
+        "domain": "",
+        "hostname": "196.46.27.101",
+        "encoded": "http%3A//196.46.27.101/"
+      },
+      {
+        "url": "https://196.46.27.101/",
+        "date": "2024-10-28T00:28:24",
+        "domain": "",
+        "hostname": "196.46.27.101",
+        "encoded": "https%3A//196.46.27.101/"
+      },
+      {
+        "url": "http://196.46.27.101",
+        "date": "2022-07-11T10:19:05",
+        "domain": "",
+        "hostname": "196.46.27.101",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "http%3A//196.46.27.101"
+      },
+      {
+        "url": "https://196.46.27.101",
+        "date": "2022-07-11T10:19:00",
+        "domain": "",
+        "hostname": "196.46.27.101",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "https%3A//196.46.27.101"
+      }
+    ],
+    "page_num": 1,
+    "limit": 10,
+    "paged": true,
+    "has_next": false,
+    "full_size": 4,
+    "actual_size": 4
+  },
+  "passive_dns": {
+    "passive_dns": [
+      {
+        "address": "196.46.27.101",
+        "first": "2020-02-13T23:20:55",
+        "last": "2020-02-13T23:20:55",
+        "hostname": "chq-nnpcdns.nnpcgroup.com",
+        "record_type": "A",
+        "indicator_link": "/indicator/hostname/chq-nnpcdns.nnpcgroup.com",
+        "flag_url": "assets/images/flags/ng.png",
+        "flag_title": "Nigeria",
+        "asset_type": "hostname",
+        "asn": "AS37207 african network information center"
+      }
+    ],
+    "count": 1
+  }
+}

@@ -1,0 +1,764 @@
+{
+  "general": {
+    "whois": "http://whois.domaintools.com/58.69.12.106",
+    "reputation": 0,
+    "indicator": "58.69.12.106",
+    "type": "IPv4",
+    "type_title": "IPv4",
+    "base_indicator": {
+      "id": 2661038537,
+      "indicator": "58.69.12.106",
+      "type": "IPv4",
+      "title": "",
+      "description": "",
+      "content": "",
+      "access_type": "public",
+      "access_reason": ""
+    },
+    "pulse_info": {
+      "count": 8,
+      "pulses": [
+        {
+          "id": "66794486bda6c3cf8823c604",
+          "name": "TCP active portscan",
+          "description": "This pulse contains hourly updated list of detected scanning hosts performing active portscan, also known as service probing. Notably, this activity requires TCP 3WHS to be established, therefore data published can't be forged.",
+          "modified": "2025-04-05T18:09:33.023000",
+          "created": "2024-06-24T10:03:50.698000",
+          "tags": [
+            "portscan",
+            ""
+          ],
+          "references": [
+            ""
+          ],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "Poland",
+            "Sweden"
+          ],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [
+            "Telecommunications"
+          ],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 72701,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "skhron-soc",
+            "id": "279660",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "IPv4": 38355,
+            "IPv6": 6
+          },
+          "indicator_count": 38361,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 502,
+          "modified_text": "4 minutes ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": true,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "67695cb08e6add7a2b6043a0",
+          "name": "Attacks on KazNET",
+          "description": "Information from proprietary sensors in the KazNET",
+          "modified": "2025-03-16T13:00:19.005000",
+          "created": "2024-12-23T12:50:56.077000",
+          "tags": [
+            "KZ",
+            "TI KZ",
+            "KazNet"
+          ],
+          "references": [
+            "https://threats.kz"
+          ],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [
+            "Kazajist\u00e1n"
+          ],
+          "malware_families": [],
+          "attack_ids": [],
+          "industries": [],
+          "TLP": "white",
+          "cloned_from": null,
+          "export_count": 163,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "web",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "Victorian",
+            "id": "257860",
+            "avatar_url": "https://otx.alienvault.com/assets/images/default-avatar.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {
+            "URL": 8
+          },
+          "indicator_count": 8,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2,
+          "modified_text": "20 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [],
+          "targeted_honeypot": [],
+          "targeted_protocol": []
+        },
+        {
+          "id": "64b5153d952a9465fe25fcc9",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-08-16T10:04:58.819000",
+          "created": "2023-07-17T10:17:33.833000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 14,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "598 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        },
+        {
+          "id": "6488424dab560da1c788417b",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-07-13T10:00:58.867000",
+          "created": "2023-06-13T10:17:49.592000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 26,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "632 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        },
+        {
+          "id": "647db62b718fdae889b16a80",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2023-07-05T10:03:05.963000",
+          "created": "2023-06-05T10:17:15.075000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 15,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2676,
+          "modified_text": "640 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        },
+        {
+          "id": "62fe1253187912e17bc6c070",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2022-09-17T10:02:16.256000",
+          "created": "2022-08-18T10:20:03.058000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 50,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2677,
+          "modified_text": "931 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        },
+        {
+          "id": "6242dce9bbd2d815a82282cc",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2022-04-28T10:03:30.218000",
+          "created": "2022-03-29T10:18:17.862000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 4,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2677,
+          "modified_text": "1073 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        },
+        {
+          "id": "620637b458caee0aba155af5",
+          "name": "Scan port 445 SMB (S3#)",
+          "description": "Scans hitting the server at TCP port 445 SMB. Same IP should not appear more than once in 96 hours in our lists S3#.",
+          "modified": "2022-03-13T10:00:39.625000",
+          "created": "2022-02-11T10:17:24.408000",
+          "tags": [
+            "tcp",
+            "smb",
+            "honeypot",
+            "Malicious IP",
+            "botnet",
+            "mirai",
+            "blacklist",
+            "scan"
+          ],
+          "references": [],
+          "public": 1,
+          "adversary": "",
+          "targeted_countries": [],
+          "malware_families": [],
+          "attack_ids": [
+            {
+              "id": "T1595",
+              "name": "",
+              "display_name": ""
+            }
+          ],
+          "industries": [],
+          "TLP": "green",
+          "cloned_from": null,
+          "export_count": 3,
+          "upvotes_count": 0,
+          "downvotes_count": 0,
+          "votes_count": 0,
+          "locked": false,
+          "pulse_source": "api",
+          "validator_count": 0,
+          "comment_count": 0,
+          "follower_count": 0,
+          "vote": 0,
+          "author": {
+            "username": "BotnetExposer",
+            "id": "80256",
+            "avatar_url": "/otxapi/users/avatar_image/media/avatars/user_80256/resized/80/avatar_f1760e796f.png",
+            "is_subscribed": false,
+            "is_following": false
+          },
+          "indicator_type_counts": {},
+          "indicator_count": 0,
+          "is_author": false,
+          "is_subscribing": null,
+          "subscriber_count": 2677,
+          "modified_text": "1119 days ago ",
+          "is_modified": true,
+          "groups": [],
+          "in_group": false,
+          "threat_hunter_scannable": false,
+          "threat_hunter_has_agents": 1,
+          "related_indicator_type": "IPv4",
+          "related_indicator_is_active": 0,
+          "targeted_technology": [],
+          "organization": [],
+          "targeted_botnet": [
+            "botnet",
+            "mirai"
+          ],
+          "targeted_honeypot": [
+            "honeypot"
+          ],
+          "targeted_protocol": [
+            "tcp",
+            "smb"
+          ]
+        }
+      ],
+      "references": [
+        "",
+        "https://threats.kz"
+      ],
+      "related": {
+        "alienvault": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": []
+        },
+        "other": {
+          "adversary": [],
+          "malware_families": [],
+          "industries": [
+            "Telecommunications"
+          ]
+        }
+      }
+    },
+    "false_positive": [],
+    "validation": [],
+    "asn": "AS9299 philippine long distance telephone company",
+    "city_data": true,
+    "city": "Makati City",
+    "region": "00",
+    "continent_code": "AS",
+    "country_code3": "PHL",
+    "country_code2": "PH",
+    "subdivision": "00",
+    "latitude": 14.5452,
+    "postal_code": "1211",
+    "longitude": 121.0648,
+    "accuracy_radius": 50,
+    "country_code": "PH",
+    "country_name": "Philippines",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/ph.png",
+    "flag_title": "Philippines",
+    "sections": [
+      "general",
+      "geo",
+      "reputation",
+      "url_list",
+      "passive_dns",
+      "malware",
+      "nids_list",
+      "http_scans"
+    ]
+  },
+  "reputation": {
+    "reputation": null
+  },
+  "geo": {
+    "asn": "AS9299 philippine long distance telephone company",
+    "city_data": true,
+    "city": "Makati City",
+    "region": "00",
+    "continent_code": "AS",
+    "country_code3": "PHL",
+    "country_code2": "PH",
+    "subdivision": "00",
+    "latitude": 14.5452,
+    "postal_code": "1211",
+    "longitude": 121.0648,
+    "accuracy_radius": 50,
+    "country_code": "PH",
+    "country_name": "Philippines",
+    "dma_code": 0,
+    "charset": 0,
+    "area_code": 0,
+    "flag_url": "/assets/images/flags/ph.png",
+    "flag_title": "Philippines"
+  },
+  "malware": {
+    "data": [
+      {
+        "datetime_int": 1592317267,
+        "hash": "5481208cee116fee5f10972b52fa75ef44a44a1c9afe7f078b503d2066a3a51f",
+        "detections": {
+          "avast": "ELF:Mirai-APD\\ [Trj]",
+          "avg": null,
+          "clamav": "Unix.Trojan.Mirai-6976991-0",
+          "msdefender": "ALF:HeraklezEval:Backdoor:Linux/Mirai.YA!MTB"
+        },
+        "date": "2020-06-16T14:21:07"
+      }
+    ],
+    "size": 1,
+    "count": 1
+  },
+  "url_list": {
+    "url_list": [
+      {
+        "url": "http://58.69.12.106",
+        "date": "2020-10-21T10:19:22",
+        "domain": "",
+        "hostname": "58.69.12.106",
+        "result": {
+          "urlworker": {
+            "ip": "58.69.12.106",
+            "http_code": 200
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 200,
+        "gsb": [],
+        "encoded": "http%3A//58.69.12.106"
+      },
+      {
+        "url": "https://58.69.12.106",
+        "date": "2020-10-21T10:19:19",
+        "domain": "",
+        "hostname": "58.69.12.106",
+        "result": {
+          "urlworker": {
+            "ip": "58.69.12.106",
+            "http_code": 200
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "httpcode": 200,
+        "gsb": [],
+        "encoded": "https%3A//58.69.12.106"
+      },
+      {
+        "domain": "",
+        "url": "http://58.69.12.106/",
+        "hostname": "58.69.12.106",
+        "result": {
+          "urlworker": {
+            "http_code": 0
+          },
+          "safebrowsing": {
+            "matches": []
+          }
+        },
+        "date": "2019-12-12T06:58:37",
+        "httpcode": 0,
+        "gsb": [],
+        "encoded": "http%3A//58.69.12.106/"
+      }
+    ],
+    "page_num": 1,
+    "limit": 10,
+    "paged": true,
+    "has_next": false,
+    "full_size": 3,
+    "actual_size": 3
+  },
+  "passive_dns": {
+    "passive_dns": [],
+    "count": 0
+  }
+}
