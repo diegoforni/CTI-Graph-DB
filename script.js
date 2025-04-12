@@ -1,16 +1,13 @@
 // Get secrets from environment (they'll be injected via Vercel)
 const NEO4J_URI = import.meta.env.VITE_NEO4J_URI;
-const NEO4J_USER = import.meta.env.VITE_NEO4J_USER;
 const NEO4J_PASSWORD = import.meta.env.VITE_NEO4J_PASSWORD;
 
 // Initialize the driver
 const driver = neo4j.driver(
   NEO4J_URI,
-  neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWORD)
+  neo4j.auth.basic('neo4j', NEO4J_PASSWORD)
 );
-console.log('URI:', NEO4J_URI);
-console.log('USER:', NEO4J_USER);
-console.log('PASS:', NEO4J_PASSWORD);
+
 
 
 // UI references
