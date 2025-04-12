@@ -8,6 +8,10 @@ const driver = neo4j.driver(
   NEO4J_URI,
   neo4j.auth.basic(NEO4J_USER, NEO4J_PASSWORD)
 );
+console.log('URI:', NEO4J_URI);
+console.log('USER:', NEO4J_USER);
+console.log('PASS:', NEO4J_PASSWORD);
+
 
 // UI references
 const runBtn = document.getElementById('runQuery');
