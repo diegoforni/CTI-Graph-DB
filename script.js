@@ -26,7 +26,7 @@ async function runSampleQuery() {
 
     let html = '<table><thead><tr><th>Técnica</th><th>Frecuencia</th></tr></thead><tbody>';
     result.records.forEach(record => {
-      html += `<tr><td>${record.get('name')}</td><td>${record.get('friend')}</td></tr>`;
+      html += `<tr><td>${record.get('Tecnica')}</td><td>${record.get('Frecuencia')}</td></tr>`;
     });
     html += '</tbody></table>';
 
