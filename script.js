@@ -21,10 +21,10 @@ async function runSampleQuery() {
   const session = driver.session();
   try {
     const result = await session.run(
-      'MATCH (p:Person)-[r:FRIENDS_WITH]->(friend) RETURN p.name AS name, friend.name AS friend'
+      'MATCH (:IP)-[a:ATACA]->(:PAIS) RETURN a.tecnica AS Tecnica, count(*) AS Frecuencia ORDER BY Frecuencia DESC'
     );
 
-    let html = '<table><thead><tr><th>Person</th><th>Friend</th></tr></thead><tbody>';
+    let html = '<table><thead><tr><th>Técnica</th><th>Frecuencia</th></tr></thead><tbody>';
     result.records.forEach(record => {
       html += `<tr><td>${record.get('name')}</td><td>${record.get('friend')}</td></tr>`;
     });
