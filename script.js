@@ -24,7 +24,7 @@ async function runSampleQuery() {
       'MATCH (:IP)-[a:ATACA]->(:PAIS) RETURN a.tecnica AS Tecnica, count(*) AS Frecuencia ORDER BY Frecuencia DESC'
     );
 
-    let html = '<table><thead><tr><th>Técnica</th><th>Frecuencia</th></tr></thead><tbody>';
+    let html = '<table><thead><tr><th>Technique </th><th>Frequency</th></tr></thead><tbody>';
     result.records.forEach(record => {
       html += `<tr><td>${record.get('Tecnica')}</td><td>${record.get('Frecuencia')}</td></tr>`;
     });
