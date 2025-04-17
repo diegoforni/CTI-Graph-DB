@@ -1,17 +1,26 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CTI-GraphDB</title>
+  <title>CTI‑GraphDB</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Most used techniques:</h1>
-  <button id="runQuery">Run Query</button>
+  <h1>CTI‑GraphDB Explorer</h1>
+
+  <label for="querySelect">Choose a query:</label>
+  <select id="querySelect" disabled>
+    <option>Loading schema…</option>
+  </select>
+  <button id="runQuery" disabled>Run</button>
+
   <div id="results"></div>
 
-  <script src="https://unpkg.com/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
+  <!-- Neo4j driver -->
+  <script src="https://unpkg.com/neo4j‑driver/lib/browser/neo4j‑web.min.js"></script>
+  <!-- Your logic -->
   <script type="module" src="script.js"></script>
 </body>
 </html>
