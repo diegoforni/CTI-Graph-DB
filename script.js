@@ -195,35 +195,90 @@ function populateColumnCheckboxes() {
 
 // ─── FILTER ROWS ─────────────────────────────────────────────────────
 
-function addFilterRow() {
-  const items = parseReturnItems(selectEl.value);
-  if (!items.length) return;
-
-  const row = document.createElement('div');
-  row.className = 'filterRow';
-
-  const sel = document.createElement('select');
-  items.forEach(({expr,alias})=>{
-    const opt = document.createElement('option');
-    opt.value = expr;
-    opt.text  = toDisplayName(alias);
-    sel.append(opt);
-  });
-
-  const inp = document.createElement('input');
-  inp.type        = 'text';
-  inp.placeholder = 'Value';
-
-  const btn = document.createElement('button');
-  btn.type        = 'button';
-  btn.textContent = 'Remove';
-  btn.addEventListener('click',()=>filtersDiv.removeChild(row));
-
-  row.append(sel, inp, btn);
-  filtersDiv.appendChild(row);
-}
-
-addFilterBtn.addEventListener('click', addFilterRow);
+// Fetch the top‐100 values for a given expression, descending by count
+async function loadFilterValues(expr, valueSelect) {
+    valueSelect.innerHTML = '<option>Loading…</option>';
+    valueSelect.disabled = true;
+    const session = driver.session();
+    try {
+      // Build a little aggregation query using the same MATCH clause
+      const prefix = selectEl.value.replace(/RETURN[\s\S]*$/i, '').trim();
+      const q = `${prefix}
+  RETURN ${expr} AS val, count(*) AS freq
+  ORDER BY freq DESC
+  LIMIT 100;`;
+  
+      const res = await session.run(q);
+  
+      // populate dropdown
+      valueSelect.innerHTML = '';
+      res.records.forEach(rec => {
+        const v = rec.get('val');
+        const opt = document.createElement('option');
+        opt.value   = v;
+        opt.text    = v;
+        valueSelect.append(opt);
+      });
+      valueSelect.disabled = false;
+    } catch (err) {
+      console.error('Value‑load error', err);
+      valueSelect.innerHTML = '<option>Error</option>';
+    } finally {
+      await session.close();
+    }
+  }
+  
+  // Override addFilterRow:
+  function addFilterRow() {
+    const items = parseReturnItems(selectEl.value);
+    if (!items.length) return;
+  
+    const row = document.createElement('div');
+    row.className = 'filterRow';
+  
+    // 1) filter‑by dropdown
+    const fieldSelect = document.createElement('select');
+    const emptyOpt = document.createElement('option');
+    emptyOpt.value = '';
+    emptyOpt.text  = '-- choose field --';
+    fieldSelect.append(emptyOpt);
+  
+    items.forEach(({expr, alias}) => {
+      const opt = document.createElement('option');
+      opt.value = expr;
+      opt.text  = toDisplayName(alias);
+      fieldSelect.append(opt);
+    });
+  
+    // 2) value dropdown (initially empty/disabled)
+    const valueSelect = document.createElement('select');
+    valueSelect.disabled = true;
+    valueSelect.innerHTML = '<option>—</option>';
+  
+    // when the user picks a field, load its values
+    fieldSelect.addEventListener('change', () => {
+      const expr = fieldSelect.value;
+      if (!expr) {
+        valueSelect.innerHTML = '<option>—</option>';
+        valueSelect.disabled = true;
+      } else {
+        loadFilterValues(expr, valueSelect);
+      }
+    });
+  
+    // 3) remove button
+    const removeBtn = document.createElement('button');
+    removeBtn.type = 'button';
+    removeBtn.textContent = 'Remove';
+    removeBtn.addEventListener('click', () => {
+      filtersDiv.removeChild(row);
+    });
+  
+    row.append(fieldSelect, valueSelect, removeBtn);
+    filtersDiv.appendChild(row);
+  }
+  
+  addFilterBtn.addEventListener('click', addFilterRow);
 
 
 
@@ -237,14 +292,19 @@ async function runSelectedQuery() {
   if (!cols.length) {
     resultsDiv.textContent = 'Select at least one column.';
     return;
-  }
+  } 
 
-  // collect filters
+  
+
+    // build WHERE
   const whereClauses = Array.from(filtersDiv.children)
-    .map(row=>{
-      const s = row.querySelector('select');
-      const v = row.querySelector('input').value;
-      return v ? `${s.value} = '${v.replace(/'/g,"\\'")}'` : null;
+    .map(row => {
+      const [fieldSelect, valueSelect] = row.querySelectorAll('select');
+      const expr  = fieldSelect.value;
+      const value = valueSelect.value;
+      return (expr && value)
+        ? `${expr} = '${value.replace(/'/g,"\\'")}'`
+        : null;
     })
     .filter(Boolean);
 
