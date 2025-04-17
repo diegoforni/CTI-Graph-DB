@@ -1,17 +1,15 @@
-// script.js (ES module)
-
-import neo4j from 'neo4j‑web';   // made available by the <script> in your HTML
-
 // Environment‑injected secrets (Vercel)
 const NEO4J_URI      = import.meta.env.VITE_NEO4J_URI;
 const NEO4J_PASSWORD = import.meta.env.VITE_NEO4J_PASSWORD;
+
+// grab the global
+const neo4j = window.neo4j;
 
 // initialize driver
 const driver = neo4j.driver(
   NEO4J_URI,
   neo4j.auth.basic('neo4j', NEO4J_PASSWORD)
 );
-
 const selectEl   = document.getElementById('querySelect');
 const runBtn     = document.getElementById('runQuery');
 const resultsDiv = document.getElementById('results');
