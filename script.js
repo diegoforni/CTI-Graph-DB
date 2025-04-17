@@ -200,7 +200,8 @@ function populateColumnCheckboxes() {
 async function runSelectedQuery() {
   const origCypher = selectEl.value;
   const items = Array.from(colCheckboxesEl.querySelectorAll('input[type=checkbox]'))
-    .filter(cb => cb.checked && cb.dataset.alias !== 'all')  // skip master
+    // only pick real columns (they have data-expr) and must be checked
+    .filter(cb => cb.checked && cb.dataset.expr)
     .map(cb => ({ expr: cb.dataset.expr, alias: cb.dataset.alias }));
 
   if (!items.length) {
