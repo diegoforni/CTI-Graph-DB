@@ -24,10 +24,18 @@
     </fieldset>
 
     <fieldset id="filtersContainer">
-      <legend>Filters (equality only)</legend>
-      <div id="filters"><!-- filter rows go here --></div>
-      <button type="button" id="addFilterBtn">+ Add Filter</button>
-    </fieldset>
+        <legend>Filters (equality only)</legend>
+        <div id="filters"></div>
+        <button type="button" id="addFilterBtn">+ Add Filter</button>
+      </fieldset>
+    
+      <!-- NEW: Group By -->
+      <fieldset id="groupByContainer">
+        <legend>Group By</legend>
+        <div id="groupByCheckboxes"><!-- checkboxes go here --></div>
+      </fieldset>
+    
+      <button id="runQuery" disabled>Run</button>
   </div>
 
   <button id="runQuery" disabled>Run</button>
