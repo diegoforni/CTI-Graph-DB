@@ -20,14 +20,20 @@
 
     <fieldset id="colCheckboxes" style="display:none">
       <legend>Select columns to return:</legend>
-      <!-- checkboxes will be injected here -->
+      <!-- checkboxes injected here -->
+    </fieldset>
+
+    <fieldset id="filtersContainer">
+      <legend>Filters (equality only)</legend>
+      <div id="filters"><!-- filter rows go here --></div>
+      <button type="button" id="addFilterBtn">+ Add Filter</button>
     </fieldset>
   </div>
 
   <button id="runQuery" disabled>Run</button>
   <div id="results"></div>
 
-  <!-- Neo4j browser bundle exposes window.neo4j -->
+  <!-- Neo4j browser bundle -->
   <script src="https://unpkg.com/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
   <script type="module" src="script.js"></script>
 </body>

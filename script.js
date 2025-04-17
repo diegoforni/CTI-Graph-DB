@@ -1,32 +1,32 @@
-// script.js
-
-// ─── Vercel‑injected secrets ────────────────────────────────────────────────
+// ─── Vercel secrets ─────────────────────────────────────────────
 const NEO4J_URI      = import.meta.env.VITE_NEO4J_URI;
 const NEO4J_PASSWORD = import.meta.env.VITE_NEO4J_PASSWORD;
 
-// pull in the global browser bundle
+// pull in browser bundle
 const neo4j  = window.neo4j;
 const driver = neo4j.driver(
   NEO4J_URI,
   neo4j.auth.basic('neo4j', NEO4J_PASSWORD)
 );
 
-// UI elements
-const selectEl         = document.getElementById('querySelect');
-const runBtn           = document.getElementById('runQuery');
-const resultsDiv       = document.getElementById('results');
-const maxRowsInput     = document.getElementById('maxRows');
-const colCheckboxesEl  = document.getElementById('colCheckboxes');
+// UI refs
+const selectEl        = document.getElementById('querySelect');
+const runBtn          = document.getElementById('runQuery');
+const resultsDiv      = document.getElementById('results');
+const maxRowsInput    = document.getElementById('maxRows');
+const colCheckboxesEl = document.getElementById('colCheckboxes');
+const filtersDiv      = document.getElementById('filters');
+const addFilterBtn    = document.getElementById('addFilterBtn');
 
 
 
-// ─── UTILITIES ─────────────────────────────────────────────────────────────
+// ─── UTILS ───────────────────────────────────────────────────────
 
 function toDisplayName(alias) {
   return alias
-    .replace(/_/g, ' ')
-    .replace(/([a-z])([A-Z])/g, '$1 $2')
-    .replace(/\b\w/g, c => c.toUpperCase());
+    .replace(/_/g,' ')
+    .replace(/([a-z])([A-Z])/g,'$1 $2')
+    .replace(/\b\w/g,c=>c.toUpperCase());
 }
 
 function parseReturnItems(cypher) {
@@ -34,10 +34,10 @@ function parseReturnItems(cypher) {
   if (!m) return [];
   return m[1]
     .split(',')
-    .map(s => s.trim())
-    .map(item => {
+    .map(s=>s.trim())
+    .map(item=>{
       const parts = item.split(/\s+AS\s+/i);
-      return parts.length === 2
+      return parts.length===2
         ? { expr: parts[0], alias: parts[1] }
         : null;
     })
@@ -46,59 +46,57 @@ function parseReturnItems(cypher) {
 
 
 
-// ─── GENERATE CYPHER TEMPLATES ───────────────────────────────────────────────
+// ─── CYPHER TEMPLATE GENERATOR ────────────────────────────────────
 
 function generateCypherQueries(schema) {
   const queries = [];
-
   const buildReturn = (varName, props, prefix) =>
     props.length
-      ? props.map(p => `${varName}.${p} AS ${prefix}${p}`).join(', ')
-      : `${varName}`; // no props → return the entire node/rel
+      ? props.map(p=>`${varName}.${p} AS ${prefix}${p}`).join(', ')
+      : varName;
 
-  // 1) Node queries
-  for (const [label, meta] of Object.entries(schema)) {
-    if (meta.type !== 'node') continue;
-    const aliasName = label.toLowerCase();
-    const props     = Object.keys(meta.properties||{});
-    const ret       = buildReturn(aliasName, props, `${label}_`);
+  // node queries
+  for (const [label,meta] of Object.entries(schema)) {
+    if (meta.type!=='node') continue;
+    const alias = label.toLowerCase();
+    const props = Object.keys(meta.properties||{});
+    const ret   = buildReturn(alias, props, label+'_');
     queries.push(
-      `// All ${label} nodes\n` +
-      `MATCH (${aliasName}:${label})\n` +
+      `// All ${label} nodes\n`+
+      `MATCH (${alias}:${label})\n`+
       `RETURN ${ret};`
     );
   }
 
-  // 2) Relationship queries
-  for (const [relType, relMeta] of Object.entries(schema)) {
-    if (relMeta.type !== 'relationship') continue;
+  // relationship queries
+  for (const [rtype,rmeta] of Object.entries(schema)) {
+    if (rmeta.type!=='relationship') continue;
+    for (const [sLabel,smeta] of Object.entries(schema)) {
+      if (smeta.type!=='node'||!smeta.relationships) continue;
+      const relDef = smeta.relationships[rtype];
+      if (!relDef||relDef.direction!=='out') continue;
 
-    for (const [startLabel, nodeMeta] of Object.entries(schema)) {
-      if (nodeMeta.type !== 'node' || !nodeMeta.relationships) continue;
-      const relDef = nodeMeta.relationships[relType];
-      if (!relDef || relDef.direction !== 'out') continue;
+      relDef.labels.forEach(eLabel=>{
+        const sAlias = sLabel.toLowerCase();
+        const rAlias = rtype.toLowerCase();
+        const eAlias = eLabel.toLowerCase();
 
-      relDef.labels.forEach(endLabel => {
-        const startAlias = startLabel.toLowerCase();
-        const relAlias   = relType.toLowerCase();
-        const endAlias   = endLabel.toLowerCase();
+        const sProps = Object.keys(smeta.properties||{});
+        const rProps = Object.keys(rmeta.properties||{});
+        const eProps = Object.keys((schema[eLabel]?.properties)||{});
 
-        const startProps = Object.keys(nodeMeta.properties||{});
-        const relProps   = Object.keys(relMeta.properties||{});
-        const endProps   = Object.keys((schema[endLabel]?.properties)||{});
-
-        const retStart = buildReturn(startAlias, startProps, `${startLabel}_`);
-        const retRel   = buildReturn(relAlias,   relProps,   `${relType}_`);
-        const retEnd   = buildReturn(endAlias,   endProps,   `${endLabel}_`);
+        const retS = buildReturn(sAlias, sProps, sLabel+'_');
+        const retR = buildReturn(rAlias, rProps, rtype+'_');
+        const retE = buildReturn(eAlias, eProps, eLabel+'_');
 
         queries.push(
-          `// ${startLabel} -[${relType}]-> ${endLabel}\n` +
-          `MATCH (${startAlias}:${startLabel})-[${relAlias}:${relType}]->(${endAlias}:${endLabel})\n` +
-          `RETURN ${retStart}` +
-            (startProps.length && relProps.length ? ', ' : '') +
-            `${retRel}` +
-            ((startProps.length||relProps.length) && endProps.length ? ', ' : '') +
-            `${retEnd};`
+          `// ${sLabel} -[${rtype}]-> ${eLabel}\n`+
+          `MATCH (${sAlias}:${sLabel})-[${rAlias}:${rtype}]->(${eAlias}:${eLabel})\n`+
+          `RETURN ${retS}` +
+            (sProps.length&&rProps.length?', ':'') +
+            `${retR}` +
+            ((sProps.length||rProps.length)&&eProps.length?', ':'') +
+            `${retE};`
         );
       });
     }
@@ -108,10 +106,11 @@ function generateCypherQueries(schema) {
 }
 
 
-// ─── LOAD SCHEMA & POPULATE DROPDOWN ────────────────────────────────────────
+
+// ─── LOAD SCHEMA & POPULATE ────────────────────────────────────────
 
 async function loadSchemaAndPopulate() {
-  selectEl.innerHTML = '<option>Loading schema…</option>';
+  selectEl.innerHTML = '<option>Loading…</option>';
   runBtn.disabled = true;
 
   const session = driver.session();
@@ -120,9 +119,10 @@ async function loadSchemaAndPopulate() {
     const schemaMap = res.records[0].get('value');
     const templates = generateCypherQueries(schemaMap);
 
+    // fill dropdown
     selectEl.innerHTML = '';
-    templates.forEach((q, idx) => {
-      const label = q.split('\n')[0].replace(/^\/\/\s*/, '') || `Query ${idx+1}`;
+    templates.forEach((q,i)=>{
+      const label = q.split('\n')[0].replace(/^\/\/\s*/,'')||`Query ${i+1}`;
       const opt   = document.createElement('option');
       opt.value   = q;
       opt.text    = label;
@@ -132,24 +132,27 @@ async function loadSchemaAndPopulate() {
     selectEl.disabled = false;
     runBtn.disabled   = false;
     populateColumnCheckboxes();
+    filtersDiv.innerHTML = '';
   } catch(err) {
-    console.error('Schema load error', err);
-    selectEl.innerHTML = '<option>Error loading schema</option>';
+    console.error(err);
+    selectEl.innerHTML = '<option>Error</option>';
   } finally {
     await session.close();
   }
 }
 
 window.addEventListener('DOMContentLoaded', loadSchemaAndPopulate);
-selectEl.addEventListener('change', populateColumnCheckboxes);
+selectEl.addEventListener('change',()=>{
+  populateColumnCheckboxes();
+  filtersDiv.innerHTML = '';
+});
 
 
 
-// ─── BUILD COLUMN CHECKBOXES ────────────────────────────────────────────────
+// ─── COLUMN CHECKBOXES ─────────────────────────────────────────────
 
 function populateColumnCheckboxes() {
-  const cypher = selectEl.value;
-  const items  = parseReturnItems(cypher);
+  const items = parseReturnItems(selectEl.value);
 
   colCheckboxesEl.innerHTML = '';
   if (!items.length) {
@@ -164,28 +167,24 @@ function populateColumnCheckboxes() {
   const allLbl   = document.createElement('label');
   allLbl.htmlFor = 'col_all';
   allLbl.textContent = 'All columns';
-
-  allBox.addEventListener('change', () => {
-    colCheckboxesEl.querySelectorAll('input[data-expr]').forEach(cb => {
+  allBox.addEventListener('change', ()=>{
+    colCheckboxesEl.querySelectorAll('input[data-expr]').forEach(cb=>{
       cb.checked = allBox.checked;
     });
   });
 
   colCheckboxesEl.append(allBox, allLbl, document.createElement('br'));
 
-  items.forEach(({expr, alias}) => {
+  items.forEach(({expr,alias})=>{
     const cb  = document.createElement('input');
     cb.type   = 'checkbox';
     cb.id     = `col_${alias}`;
-    cb.value  = alias;
     cb.dataset.expr  = expr;
     cb.dataset.alias = alias;
     cb.checked = true;
-
     const lbl = document.createElement('label');
     lbl.htmlFor    = cb.id;
     lbl.textContent = toDisplayName(alias);
-
     colCheckboxesEl.append(cb, lbl, document.createElement('br'));
   });
 
@@ -194,47 +193,90 @@ function populateColumnCheckboxes() {
 
 
 
-// ─── RUN THE CUSTOMIZED QUERY ───────────────────────────────────────────────
+// ─── FILTER ROWS ─────────────────────────────────────────────────────
+
+function addFilterRow() {
+  const items = parseReturnItems(selectEl.value);
+  if (!items.length) return;
+
+  const row = document.createElement('div');
+  row.className = 'filterRow';
+
+  const sel = document.createElement('select');
+  items.forEach(({expr,alias})=>{
+    const opt = document.createElement('option');
+    opt.value = expr;
+    opt.text  = toDisplayName(alias);
+    sel.append(opt);
+  });
+
+  const inp = document.createElement('input');
+  inp.type        = 'text';
+  inp.placeholder = 'Value';
+
+  const btn = document.createElement('button');
+  btn.type        = 'button';
+  btn.textContent = 'Remove';
+  btn.addEventListener('click',()=>filtersDiv.removeChild(row));
+
+  row.append(sel, inp, btn);
+  filtersDiv.appendChild(row);
+}
+
+addFilterBtn.addEventListener('click', addFilterRow);
+
+
+
+// ─── RUN QUERY ───────────────────────────────────────────────────────
 
 async function runSelectedQuery() {
-  const origCypher = selectEl.value;
-  const items = Array.from(colCheckboxesEl.querySelectorAll('input[data-expr]'))
-    .filter(cb => cb.checked)
-    .map(cb => ({ expr: cb.dataset.expr, alias: cb.dataset.alias }));
-
-  if (!items.length) {
+  // collect columns
+  const cols = Array.from(colCheckboxesEl.querySelectorAll('input[data-expr]'))
+    .filter(cb=>cb.checked)
+    .map(cb=>({expr:cb.dataset.expr, alias:cb.dataset.alias}));
+  if (!cols.length) {
     resultsDiv.textContent = 'Select at least one column.';
     return;
   }
 
-  const limit = parseInt(maxRowsInput.value, 10) || 100;
-  const prefix = origCypher.replace(/RETURN[\s\S]*$/i, '').trim();
-  const retClause = 
-    'RETURN ' +
-    items.map(({expr,alias}) => `${expr} AS ${alias}`).join(', ') +
-    ` LIMIT ${limit};`;
-  const cypher = `${prefix}\n${retClause}`;
+  // collect filters
+  const whereClauses = Array.from(filtersDiv.children)
+    .map(row=>{
+      const s = row.querySelector('select');
+      const v = row.querySelector('input').value;
+      return v ? `${s.value} = '${v.replace(/'/g,"\\'")}'` : null;
+    })
+    .filter(Boolean);
 
+  const limit = parseInt(maxRowsInput.value,10) || 100;
+  const prefix = selectEl.value.replace(/RETURN[\s\S]*$/i,'').trim();
+
+  let cypher = prefix;
+  if (whereClauses.length) {
+    cypher += '\nWHERE ' + whereClauses.join(' AND ');
+  }
+  cypher += '\nRETURN ' +
+    cols.map(c=>`${c.expr} AS ${c.alias}`).join(', ') +
+    ` LIMIT ${limit};`;
+
+  // run it
   resultsDiv.innerHTML = '';
   const session = driver.session();
   try {
     const res = await session.run(cypher);
-
-    const keys = res.records[0]?.keys || [];
+    const keys = res.records[0]?.keys||[];
     let html = '<table><thead><tr>' +
-               keys.map(k => `<th>${toDisplayName(k)}</th>`).join('') +
+               keys.map(k=>`<th>${toDisplayName(k)}</th>`).join('') +
                '</tr></thead><tbody>';
-
-    res.records.forEach(r => {
+    res.records.forEach(r=>{
       html += '<tr>' +
-              keys.map(k => `<td>${r.get(k)}</td>`).join('') +
+              keys.map(k=>`<td>${r.get(k)}</td>`).join('') +
               '</tr>';
     });
     html += '</tbody></table>';
-
     resultsDiv.innerHTML = html;
   } catch(err) {
-    console.error('Query error', err);
+    console.error(err);
     resultsDiv.textContent = 'Error: ' + err.message;
   } finally {
     await session.close();
@@ -243,7 +285,7 @@ async function runSelectedQuery() {
 
 runBtn.addEventListener('click', runSelectedQuery);
 
-// ─── CLEANUP ────────────────────────────────────────────────────────────────
-window.addEventListener('beforeunload', async () => {
-  await driver.close();
-});
+
+
+// ─── CLEANUP ────────────────────────────────────────────────────────
+window.addEventListener('beforeunload',async()=>await driver.close());
