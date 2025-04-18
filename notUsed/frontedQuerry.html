@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo4j Botnet Query Builder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #2a5885;
+            margin-bottom: 20px;
+        }
+        .box-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .query-box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .box-title {
+            font-weight: bold;
+            width: 120px;
+            margin-right: 15px;
+        }
+        .box-content {
+            flex-grow: 1;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        select, input, button {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        select, input {
+            flex-grow: 1;
+        }
+        .add-box-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #2a5885;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: none;
+        }
+        .add-box-button:hover {
+            background-color: #1c3f5f;
+        }
+        .remove-box {
+            color: #ff4444;
+            cursor: pointer;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        .search-button {
+            background-color: #2a5885;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 20px;
+            align-self: flex-end;
+        }
+        .search-button:hover {
+            background-color: #1c3f5f;
+        }
+        .query-display {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #282c34;
+            color: #abb2bf;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+        }
+        .keyword { color: #c678dd; }
+        .variable { color: #e06c75; }
+        .property { color: #98c379; }
+        .relationship { color: #61afef; }
+        .string { color: #e5c07b; }
+        .function { color: #56b6c2; }
+        .label { color: #d19a66; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Neo4j Botnet Query Builder</h1>
+
+        <div class="box-container" id="boxes">
+            <!-- Report Type Box (Always First) -->
+            <div class="query-box" id="report-box">
+                <div class="box-title">Report type</div>
+                <div class="box-content">
+                    <select id="template" class="template-select">
+                        <option value="sum-pais-destino">Resumen por País Destino (Query 4)</option>
+                        <option value="sum-tecnica">Resumen por Técnica de Ataque (Query 5)</option>
+                        <option value="sum-industria">Resumen por Industria Afectada (Query 6)</option>
+                        <option value="sum-protocolo-tecnologia">Listar Protocolo/Tecnología (Query 7)</option>
+                        <option value="detalles-ataque">Detalles de Ataques (Query 2)</option>
+                        <option value="sum-pais-origen">Resumen por País Origen</option>
+                        <option value="sum-protocolo">Resumen por Protocolo</option>
+                        <option value="sum-tecnologia">Resumen por Tecnologia</option>
+                    </select>
+                </div>
+                <button class="add-box-button" onclick="addFilterBox()">+</button>
+            </div>
+        </div>
+
+        <button class="search-button" onclick="generateQuery()">Search</button>
+
+        <div class="query-display" id="query-result">
+            <!-- Query will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        let activeFilters = [];
+        let boxCounter = 0;
+
+        function addFilterBox() {
+            boxCounter++;
+            const boxId = `filter-box-${boxCounter}`;
+            const filterId = Date.now();
+            
+            const boxContainer = document.getElementById('boxes');
+            const filterBox = document.createElement('div');
+            filterBox.className = 'query-box';
+            filterBox.id = boxId;
+            
+            filterBox.innerHTML = `
+                <div class="box-title">Filtro</div>
+                <div class="box-content">
+                    <select id="filter-type-${boxId}" class="filter-type">
+                        <option value="pais">País (nombre)</option>
+                        <option value="botnet">Botnet (ip.botnet)</option>
+                        <option value="protocolo">Protocolo (a.protocolo)</option>
+                        <option value="tecnologia">Tecnología (a.tecnologia)</option>
+                        <option value="industria">Industria (a.industria)</option>
+                        <option value="tecnica">Técnica (a.tecnica)</option>
+                        <option value="pulso-id">Pulso ID (pulso.id)</option>
+                        <option value="ip-direccion">IP Dirección (ip.direccion)</option>
+                    </select>
+                    <input type="text" id="filter-value-${boxId}" class="filter-value" placeholder="Valor del filtro">
+                    <span class="remove-box" onclick="removeFilterBox('${boxId}', ${filterId})">✕</span>
+                </div>
+                <button class="add-box-button" onclick="addFilterBox()">+</button>
+            `;
+            
+            boxContainer.appendChild(filterBox);
+            
+            // Add this filter to activeFilters (initially empty)
+            activeFilters.push({
+                id: filterId,
+                boxId: boxId,
+                type: document.getElementById(`filter-type-${boxId}`).value,
+                value: "" // Initially empty
+            });
+            
+            // Add event listeners to update filter when value changes
+            document.getElementById(`filter-type-${boxId}`).addEventListener('change', function() {
+                updateFilter(filterId, boxId);
+            });
+            
+            document.getElementById(`filter-value-${boxId}`).addEventListener('input', function() {
+                updateFilter(filterId, boxId);
+            });
+        }
+        
+        function updateFilter(filterId, boxId) {
+            const filterIndex = activeFilters.findIndex(f => f.id === filterId);
+            if (filterIndex !== -1) {
+                activeFilters[filterIndex].type = document.getElementById(`filter-type-${boxId}`).value;
+                activeFilters[filterIndex].value = document.getElementById(`filter-value-${boxId}`).value.trim();
+            }
+        }
+        
+        function removeFilterBox(boxId, filterId) {
+            const boxElement = document.getElementById(boxId);
+            if (boxElement) {
+                boxElement.remove();
+            }
+            
+            // Remove from activeFilters
+            activeFilters = activeFilters.filter(filter => filter.id !== filterId);
+        }
+
+        function generateQuery() {
+            // First, update all filter values from inputs (in case they changed)
+            activeFilters.forEach(filter => {
+                const valueInput = document.getElementById(`filter-value-${filter.boxId}`);
+                if (valueInput) {
+                    filter.value = valueInput.value.trim();
+                }
+            });
+            
+            // Filter out filters that have no value
+            const validFilters = activeFilters.filter(filter => filter.value !== "");
+            
+            const template = document.getElementById('template').value;
+            let query = '';
+            let baseMatch = '';
+
+            // Define base MATCH clauses needed for different templates/filters
+            const matchIpAttackPAIS = `MATCH (ip:IP)-[a:ATACA]->(pais:PAIS)`;
+            const matchIpBelongsPAIS = `MATCH (ip:IP)-[:PERTENECE]->(pais:PAIS)`;
+            const matchIpDocumentaPulso = `MATCH (pulso:Pulso)-[:DOCUMENTA]->(ip:IP)`;
+
+            switch(template) {
+                case 'sum-pais-destino': // Query 4 adaptation
+                    baseMatch = matchIpAttackPAIS;
+                    query = `
+${baseMatch}
+${generateWhereClause(['ip', 'a', 'pais'], validFilters)}
+RETURN pais.nombre AS PAIS_Destino, count(a) AS CantidadDeAtaques
+ORDER BY CantidadDeAtaques DESC`;
+                    break;
+
+                case 'sum-tecnica': // Query 5 adaptation
+                    baseMatch = matchIpAttackPAIS;
+                    query = `
+${baseMatch}
+${generateWhereClause(['ip', 'a', 'pais'], validFilters)}
+RETURN a.tecnica AS Tecnica, count(a) AS Frecuencia
+ORDER BY Frecuencia DESC`;
+                    break;
+
+                case 'sum-industria': // Query 6 adaptation
+                     baseMatch = matchIpAttackPAIS;
+                     query = `
+${baseMatch}
+${generateWhereClause(['ip', 'a', 'pais'], validFilters)}
+RETURN a.industria AS Industria, count(a) AS Frecuencia
+ORDER BY Frecuencia DESC`;
+                     break;
+
+                case 'sum-protocolo-tecnologia': // Query 7 adaptation
+                    baseMatch = matchIpAttackPAIS;
+                    query = `
+${baseMatch}
+${generateWhereClause(['ip', 'a', 'pais'], validFilters)}
+RETURN DISTINCT a.protocolo AS Protocolo, a.tecnologia AS Tecnologia
+ORDER BY Protocolo, Tecnologia`;
+                    break;
+
+                case 'detalles-ip-pais': // Query 1 adaptation
+                    baseMatch = matchIpBelongsPAIS;
+                    query = `
+${baseMatch}
+${generateWhereClause(['ip', 'pais'], validFilters)}
+RETURN ip.direccion AS IP, ip.botnet AS Botnet, pais.nombre AS PAISOrigen`;
+                    // Potentially add OPTIONAL MATCH for pulse if needed by filters
+                    if (validFilters.some(f => f.type === 'pulso-id')) {
+                       query = `
+${baseMatch}
+OPTIONAL MATCH (pulso:Pulso)-[:DOCUMENTA]->(ip)
+${generateWhereClause(['ip', 'pais', 'pulso'], validFilters)}
+RETURN ip.direccion AS IP, ip.botnet AS Botnet, pais.nombre AS PAISOrigen, collect(distinct pulso.id) AS PulsoIDs`;
+                    }
+                    break;
+
+                case 'detalles-ataque': // Query 2 adaptation
+                    baseMatch = matchIpAttackPAIS;
+                    query = `
+${baseMatch}
+${generateWhereClause(['ip', 'a', 'pais'], validFilters)}
+RETURN ip.direccion AS IP, pais.nombre AS PAIS_Destino, a.tecnica AS Tecnica, a.protocolo AS Protocolo, a.tecnologia AS Tecnologia, a.industria AS Industria`;
+                    // Potentially add OPTIONAL MATCH for pulse or source country if needed by filters
+                     if (validFilters.some(f => f.type === 'pulso-id' || f.type === 'pais')) { // 'pais' filter could be source or target
+                         query = `
+${baseMatch}
+OPTIONAL MATCH (ip)-[:PERTENECE]->(paisOrigen:PAIS)
+OPTIONAL MATCH (pulso:Pulso)-[:DOCUMENTA]->(ip)
+${generateWhereClause(['ip', 'a', 'pais', 'paisOrigen', 'pulso'], validFilters)} // Pass all potential vars
+RETURN ip.direccion AS IP, pais.nombre AS PAIS_Destino, paisOrigen.nombre AS PAIS_Origen, a.tecnica AS Tecnica, a.protocolo AS Protocolo, a.tecnologia AS Tecnologia, a.industria AS Industria, collect(distinct pulso.id) AS PulsoIDs`;
+                     }
+                    break;
+
+                case 'detalles-ip-pulso': // Query 3 adaptation
+                    baseMatch = matchIpDocumentaPulso;
+                    query = `
+${baseMatch}
+${generateWhereClause(['ip', 'pulso'], validFilters)}
+RETURN pulso.id AS PulsoID, ip.direccion AS IP`;
+                     // Potentially add OPTIONAL MATCH for country or attack info if needed by filters
+                    if (validFilters.some(f => f.type === 'pais' || f.type === 'botnet' || f.type === 'protocolo' || f.type === 'tecnologia' || f.type === 'industria' || f.type === 'tecnica')) {
+                         query = `
+${baseMatch}
+OPTIONAL MATCH (ip)-[:PERTENECE]->(pais:PAIS)
+OPTIONAL MATCH (ip)-[a:ATACA]->(paisDestino:PAIS)
+${generateWhereClause(['ip', 'pulso', 'pais', 'a', 'paisDestino'], validFilters)}
+RETURN pulso.id AS PulsoID, ip.direccion AS IP, ip.botnet AS Botnet, pais.nombre AS PAISOrigen, collect(distinct paisDestino.nombre) AS PAISesDestino, collect(distinct a.protocolo) AS Protocolos`;
+                    }
+                    break;
+
+                 case 'sum-pais-origen': // Adaptation needed - Combining PERTENECE and ATACA
+                     query = `
+MATCH (ip:IP)-[:PERTENECE]->(pais:PAIS)
+MATCH (ip)-[a:ATACA]->() // Match attacks originating FROM this IP
+${generateWhereClause(['ip', 'pais', 'a'], validFilters)} // Need 'a' if filtering by attack properties
+RETURN pais.nombre AS PAISOrigen, count(a) AS AttackCount
+ORDER BY AttackCount DESC`;
+                     break;
+
+                 case 'sum-protocolo':
+                     baseMatch = matchIpAttackPAIS;
+                     query = `
+${baseMatch}
+${generateWhereClause(['ip', 'a', 'pais'], validFilters)}
+RETURN a.protocolo AS Protocolo, COUNT(a) AS AttackCount
+ORDER BY AttackCount DESC`;
+                     break;
+
+                 case 'sum-tecnologia':
+                     baseMatch = matchIpAttackPAIS;
+                     query = `
+${baseMatch}
+${generateWhereClause(['ip', 'a', 'pais'], validFilters)}
+RETURN a.tecnologia AS Tecnologia, COUNT(a) AS AttackCount
+ORDER BY AttackCount DESC`;
+                     break;
+
+                default:
+                     query = '// Seleccione una plantilla';
+            }
+
+            const queryResult = document.getElementById('query-result');
+            queryResult.innerHTML = syntaxHighlight(query.trim());
+        }
+
+        function generateWhereClause(availableVars = [], filters) {
+            // availableVars: ['ip', 'pais', 'a', 'pulso', 'paisOrigen', 'paisDestino'] - list of variables present in the MATCH clause
+            if (filters.length === 0) {
+                return '';
+            }
+
+            const conditions = filters.map(filter => {
+                const value = `'${filter.value}'`; // Basic string escaping
+                switch(filter.type) {
+                    case 'pais': // This needs context - applies to 'pais', 'paisOrigen', or 'paisDestino' if available
+                        const paisConditions = [];
+                        if (availableVars.includes('pais')) paisConditions.push(`pais.nombre = ${value}`);
+                        if (availableVars.includes('paisOrigen')) paisConditions.push(`paisOrigen.nombre = ${value}`);
+                        if (availableVars.includes('paisDestino')) paisConditions.push(`paisDestino.nombre = ${value}`);
+                        return paisConditions.length > 0 ? `(${paisConditions.join(' OR ')})` : null; // Filter only if a relevant variable exists
+                    case 'botnet':
+                        return availableVars.includes('ip') ? `ip.botnet = ${value}` : null;
+                    case 'protocolo':
+                        return availableVars.includes('a') ? `a.protocolo = ${value}` : null;
+                    case 'tecnologia':
+                         return availableVars.includes('a') ? `a.tecnologia = ${value}` : null;
+                    case 'industria':
+                         return availableVars.includes('a') ? `a.industria = ${value}` : null;
+                    case 'tecnica':
+                         return availableVars.includes('a') ? `a.tecnica = ${value}` : null;
+                    case 'pulso-id':
+                         return availableVars.includes('pulso') ? `pulso.id = ${value}` : null;
+                    case 'ip-direccion':
+                         return availableVars.includes('ip') ? `ip.direccion = ${value}` : null;
+                    default:
+                        return null;
+                }
+            }).filter(condition => condition !== null); // Filter out nulls (where variable wasn't available)
+
+            return conditions.length > 0 ? 'WHERE ' + conditions.join(' AND ') : '';
+        }
+
+        function syntaxHighlight(query) {
+            // Updated syntax highlighting rules
+            return query
+                .replace(/\b(MATCH|OPTIONAL MATCH|WHERE|RETURN|ORDER BY|DESC|ASC|AS|count|DISTINCT|collect)\b/g, '<span class="keyword">$1</span>')
+                .replace(/\b(ip|pais|a|pulso|paisOrigen|paisDestino)\b/g, '<span class="variable">$1</span>') // Added new variables
+                .replace(/\b(IP|PAIS|Pulso)\b/g, '<span class="label">$1</span>') // Highlight Labels
+                .replace(/\.(nombre|direccion|botnet|protocolo|tecnologia|industria|id|tecnica)\b/g, '.<span class="property">$1</span>') // Updated properties
+                .replace(/\[:(ATACA|PERTENECE|DOCUMENTA)]/g, '[:<span class="relationship">$1</span>]') // Updated relationships
+                .replace(/-\[:(ATACA|PERTENECE|DOCUMENTA)]->/g, '-[:<span class="relationship">$1</span>]->')
+                .replace(/<-[:(ATACA|PERTENECE|DOCUMENTA)]-/g, '<-[:<span class="relationship">$1</span>]-')
+                .replace(/-\[a:(ATACA|PERTENECE|DOCUMENTA)]->/g, '-[<span class="variable">a</span>:<span class="relationship">$1</span>]->') // Handle variable in relationship
+                .replace(/'([^']*)'/g, '<span class="string">\'$1\'</span>')
+                .replace(/\b(count|collect)\(/g, '<span class="function">$1</span>(');
+        }
+
+        // Initialize with default query on load
+        window.onload = generateQuery;
+    </script>
+</body>
+</html>

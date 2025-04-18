@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CTI‑GraphDB Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>CTI‑GraphDB Explorer</h1>
+
+    <div class="card">
+      <label for="querySelect">1. Choose a node type:</label>
+      <select id="querySelect" disabled>
+        <option>Loading schema…</option>
+      </select>
+    </div>
+
+    <div class="card">
+      <label for="maxRows">2. Max results:</label>
+      <input type="number" id="maxRows" min="1" step="1" value="100"/>
+    </div>
+
+    <div class="card hidden" id="colSection">
+      <fieldset id="colCheckboxes">
+        <legend>3. Select columns to return:</legend>
+        <!-- checkboxes injected here -->
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset id="filtersContainer">
+        <legend>4. Add filters</legend>
+        <div id="filters"></div>
+        <button type="button" id="addFilterBtn">+ Add Filter</button>
+      </fieldset>
+    </div>
+
+    <div class="card">
+      <fieldset id="groupByContainer">
+        <legend>5. Group by columns</legend>
+        <div id="groupByCheckboxes"><!-- checkboxes go here --></div>
+      </fieldset>
+    </div>
+
+    <div class="card center">
+      <button id="runQuery" disabled>Run Query</button>
+    </div>
+
+    <div id="results" class="card hidden">
+      <!-- Results will be shown here -->
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
+  <script type="module" src="scriptTest.js"></script>
+</body>
+</html>
