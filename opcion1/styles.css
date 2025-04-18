@@ -14,9 +14,81 @@ h1 {
   letter-spacing: -0.5px;
 }
 
-.timeline-container {
-  max-width: 800px;
+/* Layout - Main Container */
+.main-container {
+  display: flex;
+  max-width: 1200px;
   margin: 0 auto;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Left Panel - Timeline */
+.timeline-history {
+  flex: 0 0 280px;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 2rem;
+}
+
+.history-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #000;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.history-step {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.history-step-number {
+  background-color: #eaeaea;
+  color: #505050;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  font-weight: 600;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.history-step.completed .history-step-number {
+  background-color: #000;
+  color: white;
+}
+
+.history-step-content {
+  font-size: 14px;
+  color: #606060;
+}
+
+.history-step.completed .history-step-content {
+  color: #000;
+}
+
+.history-step-detail {
+  margin-top: 0.5rem;
+  font-size: 13px;
+  color: #707070;
+}
+
+/* Right Panel - Work Area */
+.timeline-container {
+  flex: 1;
 }
 
 .timeline-step {
@@ -32,22 +104,6 @@ h1 {
 
 .timeline-step:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-}
-
-.timeline-step::after {
-  content: "";
-  position: absolute;
-  width: 2px;
-  background-color: #333;
-  top: 100%;
-  bottom: -1.75rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
-}
-
-.timeline-step:last-child::after {
-  display: none;
 }
 
 .step-number {
@@ -77,6 +133,59 @@ h1 {
   color: #404040;
 }
 
+/* Step Progress Navigation */
+.steps-progress {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.step-indicator {
+  width: 40px;
+  height: 40px;
+  background-color: #eaeaea;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #707070;
+  margin: 0 0.5rem;
+  position: relative;
+}
+
+.step-indicator.active {
+  background-color: #000;
+  color: white;
+}
+
+.step-indicator::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: #eaeaea;
+  width: 100%;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.step-indicator:last-child::after {
+  display: none;
+}
+
+.step-indicator.completed {
+  background-color: #333;
+  color: white;
+}
+
+.step-indicator.completed::after {
+  background-color: #333;
+}
+
+/* Buttons */
 button {
   background-color: #000;
   color: white;
@@ -137,6 +246,26 @@ button:disabled {
   display: none;
 }
 
+/* Run Query Button */
+#runQueryContainer {
+  text-align: center;
+  margin: 0 0 2.5rem 0;
+}
+
+#runQuery {
+  font-size: 1rem;
+  padding: 0.75rem 2.5rem;
+  background-color: #000;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+#runQuery:hover {
+  background-color: #333;
+}
+
+/* Form Elements */
 fieldset {
   margin-top: 1.25rem;
   padding: 1.25rem;
@@ -201,24 +330,7 @@ select:focus, input:focus {
   border-color: #ff3b30;
 }
 
-#runQueryContainer {
-  text-align: center;
-  margin: 2.5rem 0;
-}
-
-#runQuery {
-  font-size: 1rem;
-  padding: 0.75rem 2.5rem;
-  background-color: #000;
-  border-radius: 8px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-}
-
-#runQuery:hover {
-  background-color: #333;
-}
-
+/* Results Area */
 #results {
   margin-top: 2.5rem;
   padding: 1.5rem;
@@ -324,6 +436,19 @@ input[type="number"] {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .timeline-history {
+    width: 100%;
+    flex: none;
+    margin-bottom: 2rem;
+    position: static;
+  }
+}
+
 @media (max-width: 768px) {
   body {
     margin: 1rem;
@@ -347,5 +472,9 @@ input[type="number"] {
     margin-left: 0;
     margin-top: 0.5rem;
     align-self: flex-end;
+  }
+  
+  .steps-progress {
+    flex-wrap: wrap;
   }
 }

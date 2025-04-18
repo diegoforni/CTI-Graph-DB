@@ -1,6 +1,6 @@
 // ─── Vercel secrets & driver ──────────────────────────────────────
-const NEO4J_URI      = import.meta.env.VITE_NEO4J_URI;
-const NEO4J_PASSWORD = import.meta.env.VITE_NEO4J_PASSWORD;
+const NEO4J_URI      = "neo4j+s://55a2b6fa.databases.neo4j.io"
+const NEO4J_PASSWORD = "whoV0idUyLm2c6IqYaynWuTgcW-KsXDdkQMF3OrF9B0"
 const neo4j  = window.neo4j;
 const driver = neo4j.driver(
   NEO4J_URI,
@@ -146,57 +146,77 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ─── NAVEGACIÓN ENTRE PASOS ───────────────────────────────────────
   // Forward navigation
-  nextToStep2Btn.addEventListener('click', function() {
-    step1.classList.add('hidden');
-    step2.classList.remove('hidden');
-  });
+nextToStep2Btn.addEventListener('click', function() {
+  step1.classList.add('hidden');
+  step2.classList.remove('hidden');
+  updateStepIndicators(2);
+  
+  const selectedQuery = querySelect.options[querySelect.selectedIndex].text;
+  updateHistoryTimeline(1, `Selected: ${selectedQuery}`);
+});
 
-  nextToStep3Btn.addEventListener('click', function() {
-    step2.classList.add('hidden');
-    step3.classList.remove('hidden');
-    populateColumnCheckboxes();
-  });
+nextToStep3Btn.addEventListener('click', function() {
+  step2.classList.add('hidden');
+  step3.classList.remove('hidden');
+  populateColumnCheckboxes();
+  updateStepIndicators(3);
+  
+  const maxRows = maxRowsInput.value;
+  updateHistoryTimeline(2, `Maximum rows: ${maxRows}`);
+});
 
-  nextToStep4Btn.addEventListener('click', function() {
-    step3.classList.add('hidden');
-    step4.classList.remove('hidden');
-    filtersDiv.innerHTML = ''; // Limpiar filtros anteriores
-  });
+nextToStep4Btn.addEventListener('click', function() {
+  step3.classList.add('hidden');
+  step4.classList.remove('hidden');
+  filtersDiv.innerHTML = ''; // Limpiar filtros anteriores
+  updateStepIndicators(4);
+  
+  updateHistoryTimeline(3, getSelectedColumnsSummary());
+});
 
-  nextToStep5Btn.addEventListener('click', function() {
-    step4.classList.add('hidden');
-    step5.classList.remove('hidden');
-    populateGroupByCheckboxes();
-  });
+nextToStep5Btn.addEventListener('click', function() {
+  step4.classList.add('hidden');
+  step5.classList.remove('hidden');
+  populateGroupByCheckboxes();
+  updateStepIndicators(5);
+  
+  updateHistoryTimeline(4, getFiltersSummary());
+});
 
-  finishConfigBtn.addEventListener('click', function() {
-    // Activar botón de ejecutar consulta
-    runQueryBtn.disabled = false;
-    
-    // Desplazarse al botón de ejecutar
-    document.getElementById('runQueryContainer').scrollIntoView({ behavior: 'smooth' });
-  });
+finishConfigBtn.addEventListener('click', function() {
+  // Activar botón de ejecutar consulta
+  runQueryBtn.disabled = false;
+  
+  updateHistoryTimeline(5, getGroupingSummary());
+  
+  // Desplazarse al botón de ejecutar
+  document.getElementById('runQueryContainer').scrollIntoView({ behavior: 'smooth' });
+});
 
-  // Backward navigation
-  backToStep1Btn.addEventListener('click', function() {
-    step2.classList.add('hidden');
-    step1.classList.remove('hidden');
-  });
+// Backward navigation
+backToStep1Btn.addEventListener('click', function() {
+  step2.classList.add('hidden');
+  step1.classList.remove('hidden');
+  updateStepIndicators(1);
+});
 
-  backToStep2Btn.addEventListener('click', function() {
-    step3.classList.add('hidden');
-    step2.classList.remove('hidden');
-  });
+backToStep2Btn.addEventListener('click', function() {
+  step3.classList.add('hidden');
+  step2.classList.remove('hidden');
+  updateStepIndicators(2);
+});
 
-  backToStep3Btn.addEventListener('click', function() {
-    step4.classList.add('hidden');
-    step3.classList.remove('hidden');
-  });
+backToStep3Btn.addEventListener('click', function() {
+  step4.classList.add('hidden');
+  step3.classList.remove('hidden');
+  updateStepIndicators(3);
+});
 
-  backToStep4Btn.addEventListener('click', function() {
-    step5.classList.add('hidden');
-    step4.classList.remove('hidden');
-  });
+backToStep4Btn.addEventListener('click', function() {
+  step5.classList.add('hidden');
+  step4.classList.remove('hidden');
+  updateStepIndicators(4);
+});
 
   // ─── CASILLAS DE VERIFICACIÓN DE COLUMNAS ────────────────────────────
   function populateColumnCheckboxes() {
@@ -230,6 +250,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     colCheckboxesEl.style.display = 'block';
   }
+  // Actualizar el resumen de columnas cuando se modifican las selecciones
+  colCheckboxesEl.addEventListener('change', function(e) {
+    if (e.target.type === 'checkbox') {
+      updateHistoryTimeline(3, getSelectedColumnsSummary());
+    }
+  });
 
   // ─── CASILLAS DE VERIFICACIÓN GROUP-BY ────────────────────────────────
   function populateGroupByCheckboxes() {
@@ -246,6 +272,12 @@ document.addEventListener('DOMContentLoaded', function() {
       groupByCheckboxesEl.append(cb, lbl, document.createElement('br'));
     });
   }
+  // Actualizar el resumen de agrupación cuando se modifican
+  groupByCheckboxesEl.addEventListener('change', function(e) {
+    if (e.target.type === 'checkbox') {
+      updateHistoryTimeline(5, getGroupingSummary());
+    }
+  });
 
   // ─── FILAS DE FILTRO ────────────────────────────────────────────────
   addFilterBtn.addEventListener('click', addFilterRow);
@@ -294,6 +326,13 @@ document.addEventListener('DOMContentLoaded', function() {
     row.append(fieldSelect, valueSelect, remove);
     filtersDiv.appendChild(row);
   }
+
+  // Actualizar el resumen de filtros cuando se modifican
+  filtersDiv.addEventListener('change', function(e) {
+    if (e.target.tagName === 'SELECT') {
+      updateHistoryTimeline(4, getFiltersSummary());
+    }
+  });
 
   // cargar los 100 valores distintos principales para un campo
   async function loadFilterValues(expr, valueSelect) {
@@ -414,18 +453,90 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // ─── ACTUALIZACIÓN DE HISTORIAL Y NAVEGACIÓN VISUAL ───────────────────────────
+function updateStepIndicators(currentStepNum) {
+  const stepIndicators = document.querySelectorAll('.step-indicator');
+  stepIndicators.forEach((indicator, index) => {
+    const stepNum = index + 1;
+    indicator.classList.remove('active');
+    
+    if (stepNum < currentStepNum) {
+      indicator.classList.add('completed');
+    } else if (stepNum === currentStepNum) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('completed');
+    }
+  });
+}
+
+function updateHistoryTimeline(completedStep, details) {
+  const historyStep = document.getElementById(`history-step${completedStep}`);
+  const historyDetail = document.getElementById(`history-detail-step${completedStep}`);
+  
+  if (historyStep) {
+    historyStep.classList.add('completed');
+  }
+  
+  if (historyDetail && details) {
+    historyDetail.textContent = details;
+  }
+}
+
+// Actualizar historial con selecciones actuales
+function getSelectedColumnsSummary() {
+  const selectedCols = Array.from(colCheckboxesEl.querySelectorAll('input[data-expr]:checked'))
+    .map(cb => cb.dataset.alias);
+  
+  if (selectedCols.length === 0) return "No columns selected";
+  if (colCheckboxesEl.querySelector('#col_all').checked) return "All columns selected";
+  
+  return selectedCols.length > 2 
+    ? `Selected ${selectedCols.length} columns` 
+    : `Selected: ${selectedCols.join(', ')}`;
+}
+
+function getFiltersSummary() {
+  const filterCount = filtersDiv.children.length;
+  if (filterCount === 0) return "No filters applied";
+  
+  const activeFilters = Array.from(filtersDiv.children)
+    .filter(row => {
+      const selects = row.querySelectorAll('select');
+      return selects[0].value && !selects[1].disabled;
+    }).length;
+  
+  return `${activeFilters} filter${activeFilters !== 1 ? 's' : ''} applied`;
+}
+
+function getGroupingSummary() {
+  const groupByCols = Array.from(groupByCheckboxesEl.querySelectorAll('input[type=checkbox]:checked'))
+    .map(cb => toDisplayName(cb.dataset.alias));
+  
+  if (groupByCols.length === 0) return "No grouping applied";
+  
+  return groupByCols.length > 2
+    ? `Grouped by ${groupByCols.length} columns`
+    : `Grouped by: ${groupByCols.join(', ')}`;
+}
+
   // ─── EVENTOS ───────────────────────────────────────────────────────
   
   // Cargar esquema al iniciar la aplicación
   loadSchemaAndPopulate();
   
-  // Habilitar el botón Next cuando se selecciona un query
   querySelect.addEventListener('change', function() {
     nextToStep2Btn.disabled = !this.value;
+    
+    if (this.value) {
+      const selectedQueryName = this.options[this.selectedIndex].text;
+      updateHistoryTimeline(1, `Selected: ${selectedQueryName}`);
+    }
   });
   
   // ─── CLEANUP ───────────────────────────────────────────────────────
   window.addEventListener('beforeunload', async () => {
     await driver.close();
   });
+
 });
