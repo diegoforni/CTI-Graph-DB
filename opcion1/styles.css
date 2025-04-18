@@ -1,0 +1,351 @@
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 2rem;
+  background-color: #f7f7f7;
+  color: #202020;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-step {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.timeline-step:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.timeline-step::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  background-color: #333;
+  top: 100%;
+  bottom: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.timeline-step:last-child::after {
+  display: none;
+}
+
+.step-number {
+  background-color: #000;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #000;
+  letter-spacing: -0.3px;
+}
+
+.step-content {
+  margin-bottom: 1.25rem;
+  color: #404040;
+}
+
+button {
+  background-color: #000;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  transition: all 0.2s;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #333;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.25rem;
+}
+
+.back-button {
+  background-color: white;
+  color: #404040;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: #f5f5f5;
+  border-color: #d0d0d0;
+}
+
+.next-button {
+  margin-left: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+fieldset {
+  margin-top: 1.25rem;
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  background-color: #fcfcfc;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: 500;
+  color: #606060;
+}
+
+select, input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-right: 0.75rem;
+  background-color: white;
+  color: #404040;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.filter-field, .filter-value {
+  flex: 1;
+}
+
+.remove-filter {
+  background-color: white;
+  color: #707070;
+  border: 1px solid #e0e0e0;
+  margin-left: 0.75rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.remove-filter:hover {
+  background-color: #f3f3f3;
+  color: #ff3b30;
+  border-color: #ff3b30;
+}
+
+#runQueryContainer {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+#runQuery {
+  font-size: 1rem;
+  padding: 0.75rem 2.5rem;
+  background-color: #000;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+#runQuery:hover {
+  background-color: #333;
+}
+
+#results {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+  font-size: 14px;
+}
+
+table th {
+  background-color: #f8f8f8;
+  text-align: left;
+  padding: 0.875rem 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  font-weight: 600;
+  color: #505050;
+}
+
+table td {
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #e8e8e8;
+  color: #404040;
+}
+
+table tr:hover {
+  background-color: #fafafa;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+  margin-right: 8px;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #000;
+  border-color: #000;
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  left: 6px;
+  top: 2px;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling for checkboxes */
+label {
+  cursor: pointer;
+  font-size: 14px;
+  color: #404040;
+}
+
+/* Add Filter button */
+#addFilterBtn {
+  background-color: white;
+  color: #404040;
+  border: 1px dashed #c0c0c0;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+#addFilterBtn:hover {
+  background-color: #f8f8f8;
+  border-color: #a0a0a0;
+  color: #000;
+}
+
+/* Number input styling */
+input[type="number"] {
+  width: 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    margin: 1rem;
+  }
+  
+  .timeline-step {
+    padding: 1.25rem;
+  }
+  
+  .filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-row select {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+  
+  .remove-filter {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTI‑GraphDB Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>CTI‑GraphDB Explorer</h1>
+
+  <div class="timeline-container">
+    <!-- Run Query Button - Always Visible -->
+    <div id="runQueryContainer">
+      <button id="runQuery" disabled>Run Query</button>
+    </div>
+
+    <!-- Step 1: Choose Query Type -->
+    <div class="timeline-step" id="step1">
+      <div class="step-number">1</div>
+      <div class="step-title">Select Report Type</div>
+      <div class="step-content">
+        <label for="querySelect">Choose a query:</label>
+        <select id="querySelect" disabled>
+          <option>Loading schema…</option>
+        </select>
+      </div>
+      <div class="button-container">
+        <button class="next-button" id="nextToStep2" disabled>Next</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Configure Rows -->
+    <div class="timeline-step hidden" id="step2">
+      <div class="step-number">2</div>
+      <div class="step-title">Configure Rows</div>
+      <div class="step-content">
+        <label for="maxRows">Max rows:</label>
+        <input type="number" id="maxRows" min="1" step="1" value="100"/>
+      </div>
+      <div class="button-container">
+        <button class="back-button" id="backToStep1">Back</button>
+        <button class="next-button" id="nextToStep3">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Select Columns -->
+    <div class="timeline-step hidden" id="step3">
+      <div class="step-number">3</div>
+      <div class="step-title">Select Columns</div>
+      <div class="step-content">
+        <fieldset id="colCheckboxes">
+          <legend>Select columns to return:</legend>
+          <!-- checkboxes injected here -->
+        </fieldset>
+      </div>
+      <div class="button-container">
+        <button class="back-button" id="backToStep2">Back</button>
+        <button class="next-button" id="nextToStep4">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Add Filters -->
+    <div class="timeline-step hidden" id="step4">
+      <div class="step-number">4</div>
+      <div class="step-title">Configure Filters</div>
+      <div class="step-content">
+        <fieldset id="filtersContainer">
+          <legend>Filters (equality only)</legend>
+          <div id="filters"></div>
+          <button type="button" id="addFilterBtn">+ Add Filter</button>
+        </fieldset>
+      </div>
+      <div class="button-container">
+        <button class="back-button" id="backToStep3">Back</button>
+        <button class="next-button" id="nextToStep5">Next</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Group By -->
+    <div class="timeline-step hidden" id="step5">
+      <div class="step-number">5</div>
+      <div class="step-title">Group Results</div>
+      <div class="step-content">
+        <fieldset id="groupByContainer">
+          <legend>Group By</legend>
+          <div id="groupByCheckboxes">
+            <!-- checkboxes go here -->
+          </div>
+        </fieldset>
+      </div>
+      <div class="button-container">
+        <button class="back-button" id="backToStep4">Back</button>
+        <button class="next-button" id="finishConfiguration">Finish</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="results" class="hidden">
+    <!-- Results will be displayed here -->
+  </div>
+
+  <!-- Neo4j browser bundle -->
+  <script src="https://unpkg.com/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
+  <script src="queryBuilding.js"></script>
+</body>
+</html>
