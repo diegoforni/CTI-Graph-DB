@@ -4,14 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CTI‑GraphDB Explorer</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="base.css" />
+  <link rel="stylesheet" href="components.css" />
+  <style>
+    /* Additional styles to ensure navigation consistency */
+    .global-navigation {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      gap: 20px;
+    }
+
+  </style>
 </head>
 <body>
-  
-    <h1>CTI‑GraphDB Explorer</h1>
+  <h1>CTI‑GraphDB Explorer</h1>
 
-    <div class="main-container">
-      <!-- Left Panel - Timeline History -->
+  <div class="main-container">
+    <!-- Left Panel - Timeline History (33% width) -->
+    <div class="sidebar">
       <div class="timeline-history">
         <div class="history-title">Query Construction Progress</div>
         
@@ -55,14 +67,13 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Right Panel - Work Area -->
+    <!-- Right Panel - Main Content Area (66% width) -->
+    <div class="content-column">
+      
+      <!-- Work Area -->
       <div class="work-area">
-        <!-- Run Query Button - Always Visible -->
-        <div id="runQueryContainer">
-          <button id="runQuery" disabled>Run Query</button>
-        </div>
-
         <div class="timeline-container">
           <!-- Step 1: Choose Query Type -->
           <div class="timeline-step" id="step1">
@@ -74,9 +85,6 @@
                 <option>Loading schema…</option>
               </select>
             </div>
-            <div class="button-container">
-              <button class="next-button" id="nextToStep2" disabled>Next</button>
-            </div>
           </div>
 
           <!-- Step 2: Configure Rows -->
@@ -86,10 +94,6 @@
             <div class="step-content">
               <label for="maxRows">Max rows:</label>
               <input type="number" id="maxRows" min="1" step="1" value="100"/>
-            </div>
-            <div class="button-container">
-              <button class="back-button" id="backToStep1">Back</button>
-              <button class="next-button" id="nextToStep3">Next</button>
             </div>
           </div>
 
@@ -101,11 +105,7 @@
               <fieldset id="colCheckboxes">
                 <legend>Select columns to return:</legend>
                 <!-- checkboxes injected here -->
-          </fieldset>
-            </div>
-            <div class="button-container">
-              <button class="back-button" id="backToStep2">Back</button>
-              <button class="next-button" id="nextToStep4">Next</button>
+              </fieldset>
             </div>
           </div>
 
@@ -119,10 +119,6 @@
                 <div id="filters"></div>
                 <button type="button" id="addFilterBtn">+ Add Filter</button>
               </fieldset>
-            </div>
-            <div class="button-container">
-              <button class="back-button" id="backToStep3">Back</button>
-              <button class="next-button" id="nextToStep5">Next</button>
             </div>
           </div>
 
@@ -138,27 +134,35 @@
                 </div>
               </fieldset>
             </div>
-            <div class="button-container">
-              <button class="back-button" id="backToStep4">Back</button>
-              <button class="next-button" id="finishConfiguration">Finish</button>
-            </div>
           </div>
-
-          <!-- Step Navigation -->
-          <div class="steps-progress">
-            <div class="step-indicator active" data-step="1">1</div>
-            <div class="step-indicator" data-step="2">2</div>
-            <div class="step-indicator" data-step="3">3</div>
-            <div class="step-indicator" data-step="4">4</div>
-            <div class="step-indicator" data-step="5">5</div>
-          </div>
-        </div>
-
-        <div id="results" class="hidden">
-          <!-- Results will be displayed here -->
         </div>
       </div>
+
+      <!-- Global Navigation – single row with Back | [1 2 3 4 5] | Next -->
+      <div class="global-navigation">
+        <button class="nav-btn back-btn" id="globalBack" disabled>Back</button>
+
+        <div class="step-buttons">
+          <button class="step-button active" data-step="1">1</button>
+          <button class="step-button"        data-step="2">2</button>
+          <button class="step-button"        data-step="3">3</button>
+          <button class="step-button"        data-step="4">4</button>
+          <button class="step-button"        data-step="5">5</button>
+        </div>
+
+        <button class="nav-btn next-btn" id="globalNext">Next</button>
+      </div>
+
+      <!-- Run Query Button - At Bottom of Content Column -->
+      <div id="runQueryContainer">
+        <button id="runQuery" disabled>Run Query</button>
+      </div>
     </div>
+  </div>
+  <div id="results" class="hidden">
+    <!-- Results will be displayed here -->
+  </div>
+
   <!-- Neo4j browser bundle -->
   <script src="https://unpkg.com/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
   <script type="module" src="queryBuilding.js"></script>

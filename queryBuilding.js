@@ -19,25 +19,32 @@ document.addEventListener('DOMContentLoaded', function() {
   const addFilterBtn = document.getElementById('addFilterBtn');
   const groupByCheckboxesEl = document.getElementById('groupByCheckboxes');
 
-  // Botones de navegación - Next
-  const nextToStep2Btn = document.getElementById('nextToStep2');
-  const nextToStep3Btn = document.getElementById('nextToStep3');
-  const nextToStep4Btn = document.getElementById('nextToStep4');
-  const nextToStep5Btn = document.getElementById('nextToStep5');
-  const finishConfigBtn = document.getElementById('finishConfiguration');
-
-  // Botones de navegación - Back
-  const backToStep1Btn = document.getElementById('backToStep1');
-  const backToStep2Btn = document.getElementById('backToStep2');
-  const backToStep3Btn = document.getElementById('backToStep3');
-  const backToStep4Btn = document.getElementById('backToStep4');
-
   // Contenedores de pasos
   const step1 = document.getElementById('step1');
   const step2 = document.getElementById('step2');
   const step3 = document.getElementById('step3');
   const step4 = document.getElementById('step4');
   const step5 = document.getElementById('step5');
+
+  // Global navigation buttons
+  const globalBackBtn = document.getElementById('globalBack');
+  const globalNextBtn = document.getElementById('globalNext');
+
+  // Track current step
+  let currentStep = 1;
+
+  // Set up global navigation
+  globalBackBtn.addEventListener('click', function() {
+    if (currentStep > 1) {
+      navigateToStep(currentStep - 1);
+    }
+  });
+
+  globalNextBtn.addEventListener('click', function() {
+    if (currentStep < 5) {
+      navigateToStep(currentStep + 1);
+    }
+  });
 
   // ─── UTILIDADES ───────────────────────────────────────────────────
   function toDisplayName(alias) {
@@ -115,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
   async function loadSchemaAndPopulate() {
     querySelect.innerHTML = '<option>Loading schema…</option>';
     runQueryBtn.disabled = true;
-    nextToStep2Btn.disabled = true;
+    globalNextBtn.disabled = true;
 
     const session = driver.session();
     try {
@@ -145,78 +152,47 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // ─── NAVEGACIÓN ENTRE PASOS ───────────────────────────────────────
-  // Forward navigation
-nextToStep2Btn.addEventListener('click', function() {
-  step1.classList.add('hidden');
-  step2.classList.remove('hidden');
-  updateStepIndicators(2);
-  
-  const selectedQuery = querySelect.options[querySelect.selectedIndex].text;
-  updateHistoryTimeline(1, `Selected: ${selectedQuery}`);
-});
-
-nextToStep3Btn.addEventListener('click', function() {
-  step2.classList.add('hidden');
-  step3.classList.remove('hidden');
-  populateColumnCheckboxes();
-  updateStepIndicators(3);
-  
-  const maxRows = maxRowsInput.value;
-  updateHistoryTimeline(2, `Maximum rows: ${maxRows}`);
-});
-
-nextToStep4Btn.addEventListener('click', function() {
-  step3.classList.add('hidden');
-  step4.classList.remove('hidden');
-  filtersDiv.innerHTML = ''; // Limpiar filtros anteriores
-  updateStepIndicators(4);
-  
-  updateHistoryTimeline(3, getSelectedColumnsSummary());
-});
-
-nextToStep5Btn.addEventListener('click', function() {
-  step4.classList.add('hidden');
-  step5.classList.remove('hidden');
-  populateGroupByCheckboxes();
-  updateStepIndicators(5);
-  
-  updateHistoryTimeline(4, getFiltersSummary());
-});
-
-finishConfigBtn.addEventListener('click', function() {
-  // Activar botón de ejecutar consulta
-  runQueryBtn.disabled = false;
-  
-  updateHistoryTimeline(5, getGroupingSummary());
-  
-  // Desplazarse al botón de ejecutar
-  document.getElementById('runQueryContainer').scrollIntoView({ behavior: 'smooth' });
-});
-
-// Backward navigation
-backToStep1Btn.addEventListener('click', function() {
-  step2.classList.add('hidden');
-  step1.classList.remove('hidden');
-  updateStepIndicators(1);
-});
-
-backToStep2Btn.addEventListener('click', function() {
-  step3.classList.add('hidden');
-  step2.classList.remove('hidden');
-  updateStepIndicators(2);
-});
-
-backToStep3Btn.addEventListener('click', function() {
-  step4.classList.add('hidden');
-  step3.classList.remove('hidden');
-  updateStepIndicators(3);
-});
-
-backToStep4Btn.addEventListener('click', function() {
-  step5.classList.add('hidden');
-  step4.classList.remove('hidden');
-  updateStepIndicators(4);
-});
+  function navigateToStep(stepNum) {
+    // Hide all steps
+    const allSteps = [step1, step2, step3, step4, step5];
+    allSteps.forEach(step => step.classList.add('hidden'));
+    
+    // Show requested step
+    allSteps[stepNum - 1].classList.remove('hidden');
+    
+    // If going to step 3, populate column checkboxes
+    if (stepNum === 3) {
+      populateColumnCheckboxes();
+      updateHistoryTimeline(2, `Maximum rows: ${maxRowsInput.value}`);
+    }
+    
+    // If going to step 4, clear and prepare filters
+    if (stepNum === 4) {
+      filtersDiv.innerHTML = ''; // Limpiar filtros anteriores
+      updateHistoryTimeline(3, getSelectedColumnsSummary());
+    }
+    
+    // If going to step 5, populate group by checkboxes
+    if (stepNum === 5) {
+      populateGroupByCheckboxes();
+      updateHistoryTimeline(4, getFiltersSummary());
+      // Activate run button when reaching the last step
+      runQueryBtn.disabled = false;
+      updateHistoryTimeline(5, getGroupingSummary());
+    }
+    
+    // If going to step 2, update history for step 1
+    if (stepNum === 2) {
+      const selectedQuery = querySelect.options[querySelect.selectedIndex].text;
+      updateHistoryTimeline(1, `Selected: ${selectedQuery}`);
+    }
+    
+    // Update step indicators and buttons
+    updateStepIndicators(stepNum);
+    
+    // Update current step tracker
+    currentStep = stepNum;
+  }
 
   // ─── CASILLAS DE VERIFICACIÓN DE COLUMNAS ────────────────────────────
   function populateColumnCheckboxes() {
@@ -373,65 +349,64 @@ backToStep4Btn.addEventListener('click', function() {
     
     const items = parseReturnItems(querySelect.value);
     const itemsMap = Object.fromEntries(items.map(({expr,alias})=>[alias,expr]));
-
-    // chosen columns
+  
+    // columnas elegidas
     const cols = items
       .filter(({alias})=>
         colCheckboxesEl.querySelector(`[data-alias="${alias}"]`)?.checked
       )
       .map(({expr,alias})=>({expr,alias}));
-
+  
     if (!cols.length) {
       resultsDiv.textContent = 'Select at least one column.';
       return;
     }
-
-    // filters
-    const whereClauses = Array.from(filtersDiv.children)
-      .map(row=>{
-        const [fs, vs] = row.querySelectorAll('select');
-        return fs.value && vs.value
-          ? `${fs.value} = '${vs.value.replace(/'/g,"\\'")}'`
-          : null;
-      })
-      .filter(Boolean);
-
-    // group‑by
+  
+    // agrupación seleccionada
     const groupBy = Array.from(groupByCheckboxesEl.querySelectorAll('input[type=checkbox]'))
       .filter(cb=>cb.checked)
       .map(cb=>cb.dataset.alias);
-
+  
+    // filtros: usa CONTAINS si hay agrupación, si no = para igualdad exacta
+    const whereClauses = Array.from(filtersDiv.children)
+      .map(row => {
+        const [fs, vs] = row.querySelectorAll('select');
+        if (fs.value && vs.value) {
+          const op = groupBy.length ? 'CONTAINS' : '=';
+          return `${fs.value} ${op} '${vs.value.replace(/'/g,"\\'")}'`;
+        }
+        return null;
+      })
+      .filter(Boolean);
+  
     const limit = parseInt(maxRowsInput.value,10) || 100;
     const prefix = querySelect.value.replace(/RETURN[\s\S]*$/i, '').trim();
-
+  
     let cypher = prefix;
     if (whereClauses.length) {
       cypher += '\nWHERE ' + whereClauses.join(' AND ');
     }
-
+  
     if (groupBy.length) {
-      // GROUPED
-      // 1) group keys
+      // CONSULTA AGRUPADA
       const grp = groupBy
-        .map(a=>`${itemsMap[a]} AS ${a}`)
+        .map(a => `${itemsMap[a]} AS ${a}`)
         .join(', ');
-
-      // 2) aggregates for other cols
+  
       const others = cols
-        .map(c=>c.alias)
-        .filter(a=>!groupBy.includes(a))
-        .map(a=>`collect(DISTINCT ${itemsMap[a]}) AS ${a}`);
-
-      cypher += `\nRETURN ${grp}, count(*) AS Count` +
-                (others.length? ', ' + others.join(', '): '') +
+        .map(c => c.alias)
+        .filter(a => !groupBy.includes(a))
+        .map(a => `collect(DISTINCT ${itemsMap[a]}) AS ${a}`);
+  
+      cypher += `\nRETURN ${grp}, count(*) AS Count${others.length ? ', ' + others.join(', '): ''}` +
                 `\nORDER BY Count DESC\nLIMIT ${limit};`;
     } else {
-      // SIMPLE SELECT
+      // CONSULTA SIMPLE
       const ret = cols.map(c=>`${c.expr} AS ${c.alias}`).join(', ');
       cypher += `\nRETURN ${ret} LIMIT ${limit};`;
     }
-
-    // execute
+  
+    // Ejecutar
     resultsDiv.innerHTML = '';
     const session = driver.session();
     try {
@@ -454,71 +429,71 @@ backToStep4Btn.addEventListener('click', function() {
   }
 
   // ─── ACTUALIZACIÓN DE HISTORIAL Y NAVEGACIÓN VISUAL ───────────────────────────
-function updateStepIndicators(currentStepNum) {
-  const stepIndicators = document.querySelectorAll('.step-indicator');
-  stepIndicators.forEach((indicator, index) => {
-    const stepNum = index + 1;
-    indicator.classList.remove('active');
+  function updateStepIndicators(currentStepNum) {
+    const stepIndicators = document.querySelectorAll('.step-button');
+    stepIndicators.forEach((indicator, index) => {
+      const stepNum = index + 1;
+      indicator.classList.remove('active');
+      
+      if (stepNum === currentStepNum) {
+        indicator.classList.add('active');
+      }
+    });
     
-    if (stepNum < currentStepNum) {
-      indicator.classList.add('completed');
-    } else if (stepNum === currentStepNum) {
-      indicator.classList.add('active');
-    } else {
-      indicator.classList.remove('completed');
+    // Update global navigation buttons
+    globalBackBtn.disabled = currentStepNum <= 1;
+    globalNextBtn.disabled = currentStepNum >= 5;
+  }
+
+  function updateHistoryTimeline(completedStep, details) {
+    const historyStep = document.getElementById(`history-step${completedStep}`);
+    const historyDetail = document.getElementById(`history-detail-step${completedStep}`);
+    
+    if (historyStep) {
+      historyStep.classList.add('completed');
     }
-  });
-}
-
-function updateHistoryTimeline(completedStep, details) {
-  const historyStep = document.getElementById(`history-step${completedStep}`);
-  const historyDetail = document.getElementById(`history-detail-step${completedStep}`);
-  
-  if (historyStep) {
-    historyStep.classList.add('completed');
+    
+    if (historyDetail && details) {
+      historyDetail.textContent = details;
+    }
   }
-  
-  if (historyDetail && details) {
-    historyDetail.textContent = details;
+
+  // Actualizar historial con selecciones actuales
+  function getSelectedColumnsSummary() {
+    const selectedCols = Array.from(colCheckboxesEl.querySelectorAll('input[data-expr]:checked'))
+      .map(cb => cb.dataset.alias);
+    
+    if (selectedCols.length === 0) return "No columns selected";
+    if (colCheckboxesEl.querySelector('#col_all')?.checked) return "All columns selected";
+    
+    return selectedCols.length > 2 
+      ? `Selected ${selectedCols.length} columns` 
+      : `Selected: ${selectedCols.join(', ')}`;
   }
-}
 
-// Actualizar historial con selecciones actuales
-function getSelectedColumnsSummary() {
-  const selectedCols = Array.from(colCheckboxesEl.querySelectorAll('input[data-expr]:checked'))
-    .map(cb => cb.dataset.alias);
-  
-  if (selectedCols.length === 0) return "No columns selected";
-  if (colCheckboxesEl.querySelector('#col_all').checked) return "All columns selected";
-  
-  return selectedCols.length > 2 
-    ? `Selected ${selectedCols.length} columns` 
-    : `Selected: ${selectedCols.join(', ')}`;
-}
+  function getFiltersSummary() {
+    const filterCount = filtersDiv.children.length;
+    if (filterCount === 0) return "No filters applied";
+    
+    const activeFilters = Array.from(filtersDiv.children)
+      .filter(row => {
+        const selects = row.querySelectorAll('select');
+        return selects[0].value && !selects[1].disabled;
+      }).length;
+    
+    return `${activeFilters} filter${activeFilters !== 1 ? 's' : ''} applied`;
+  }
 
-function getFiltersSummary() {
-  const filterCount = filtersDiv.children.length;
-  if (filterCount === 0) return "No filters applied";
-  
-  const activeFilters = Array.from(filtersDiv.children)
-    .filter(row => {
-      const selects = row.querySelectorAll('select');
-      return selects[0].value && !selects[1].disabled;
-    }).length;
-  
-  return `${activeFilters} filter${activeFilters !== 1 ? 's' : ''} applied`;
-}
-
-function getGroupingSummary() {
-  const groupByCols = Array.from(groupByCheckboxesEl.querySelectorAll('input[type=checkbox]:checked'))
-    .map(cb => toDisplayName(cb.dataset.alias));
-  
-  if (groupByCols.length === 0) return "No grouping applied";
-  
-  return groupByCols.length > 2
-    ? `Grouped by ${groupByCols.length} columns`
-    : `Grouped by: ${groupByCols.join(', ')}`;
-}
+  function getGroupingSummary() {
+    const groupByCols = Array.from(groupByCheckboxesEl.querySelectorAll('input[type=checkbox]:checked'))
+      .map(cb => toDisplayName(cb.dataset.alias));
+    
+    if (groupByCols.length === 0) return "No grouping applied";
+    
+    return groupByCols.length > 2
+      ? `Grouped by ${groupByCols.length} columns`
+      : `Grouped by: ${groupByCols.join(', ')}`;
+  }
 
   // ─── EVENTOS ───────────────────────────────────────────────────────
   
@@ -526,7 +501,7 @@ function getGroupingSummary() {
   loadSchemaAndPopulate();
   
   querySelect.addEventListener('change', function() {
-    nextToStep2Btn.disabled = !this.value;
+    globalNextBtn.disabled = !this.value;
     
     if (this.value) {
       const selectedQueryName = this.options[this.selectedIndex].text;
@@ -538,5 +513,4 @@ function getGroupingSummary() {
   window.addEventListener('beforeunload', async () => {
     await driver.close();
   });
-
 });

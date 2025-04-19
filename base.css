@@ -1,0 +1,419 @@
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 2rem;
+    background-color: #f7f7f7;
+    color: #202020;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #000;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    font-size: 4em;
+  }
+  
+  /* Layout - Main Container with  viewport height */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    height: 66vh; 
+    min-height: 600px; /* Minimum height to ensure usability on small screens */
+    margin: 0 auto;
+    margin-top: 11vh;
+    gap: 2rem;
+    align-items: center; /* Center children vertically */
+    justify-content: flex-start; /* Maintain horizontal alignment */
+  }
+  
+  /* Left Panel - Sidebar (33% width) with Bootstrap-style border */
+/* Left Panel - Sidebar (33% width) with Bootstrap-style border */
+.sidebar, .content-column {
+  flex: 0 0 33%; /* Sidebar uses 33%, content-column will override to 66% */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+/* Specific override for content-column width */
+.content-column {
+  flex: 0 0 66%;
+}
+
+  
+  /* Timeline History - Adjust for new parent padding */
+  .timeline-history {
+    background: white;
+    padding: 1.25rem;
+    margin: -0.25rem; /* Compensate for parent padding */
+  }
+  
+  /* Make sure the timeline-step has proper flex layout to allow margin-top: auto to work */
+  .timeline-step {
+    background: white;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px; /* Set a minimum height to ensure there's space */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .main-container {
+      flex-direction: column;
+      height: auto;
+    }
+    
+    .sidebar {
+      width: 100%;
+      flex: none;
+      position: static;
+      margin-bottom: 2rem;
+      height: auto;
+    }
+    
+    .content-column {
+      width: 100%;
+      flex: none;
+      height: auto;
+    }
+  }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .main-container {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .sidebar {
+    width: 100%;
+    flex: none;
+    position: static;
+    margin-bottom: 2rem;
+    height: auto;
+  }
+  
+  .content-column {
+    width: 100%;
+    flex: none;
+    height: auto;
+  }
+}
+
+.work-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+  
+  .history-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #000;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .history-step {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .history-step-number {
+    background-color: #eaeaea;
+    color: #505050;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    font-weight: 600;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+  
+  .history-step.completed .history-step-number {
+    background-color: #000;
+    color: white;
+  }
+  
+  .history-step-content {
+    font-size: 14px;
+    color: #606060;
+  }
+  
+  .history-step.completed .history-step-content {
+    color: #000;
+  }
+  
+  .history-step-detail {
+    margin-top: 0.5rem;
+    font-size: 13px;
+    color: #707070;
+  }
+  
+  /* Right Panel - Timeline Container */
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .timeline-step {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+    transition: all 0.2s ease;
+    /* Add this to ensure content fills the container */
+    height: 100%;
+  }
+  
+  
+  .timeline-step:hover {
+  }
+  
+  .step-number {
+    background-color: #000;
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .step-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: #000;
+    letter-spacing: -0.3px;
+  }
+  
+  .step-content {
+    margin-bottom: 1.25rem;
+    color: #404040;
+  }
+  
+  /* Run Query Container */
+  #runQueryContainer {
+    margin-top: 2rem;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  
+  /* Hidden elements */
+  .hidden {
+    display: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .main-container {
+      flex-direction: column;
+    }
+    
+    .sidebar {
+      width: 100%;
+      flex: none;
+      position: static;
+      margin-bottom: 2rem;
+    }
+    
+    .content-column {
+      width: 100%;
+      flex: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      margin: 1rem;
+    }
+    
+    .timeline-step {
+      padding: 1.25rem;
+    }
+    
+    .filter-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .filter-row select {
+      margin-bottom: 0.5rem;
+      margin-right: 0;
+    }
+    
+    .remove-filter {
+      margin-left: 0;
+      margin-top: 0.5rem;
+      align-self: flex-end;
+    }
+    
+    .steps-progress {
+      flex-wrap: wrap;
+    }
+  }
+
+  /* Existing Base CSS (keeping relevant parts) */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 2rem;
+    background-color: #f7f7f7;
+    color: #202020;
+    line-height: 1.5;
+  }
+  
+  /* Other CSS rules... */
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto; /* This pushes it to the bottom */
+    padding-top: 1.25rem; /* Keep some spacing from content above */
+  }
+  
+  
+  /* Step Buttons Navigation - Added to bottom of each step */
+  .step-navigation {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .step-button {
+    width: 36px;
+    height: 36px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: #505050;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    padding: 0;
+    font-size: 14px;
+  }
+  
+  .step-button:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-1px);
+  }
+  
+  .step-button.active {
+    background-color: #000;
+    color: white;
+  }
+  
+  .next-button {
+    margin-left: auto;
+  }
+  
+  /* Keep existing responsive code... */
+
+  /* Run Query Container - Updated positioning and width */
+/* Run Query Container - Updated positioning, width, and modern shadow */
+#runQueryContainer {
+    margin-top: 2rem;
+    width:100%; /* Match content column width */
+    margin-left: 0; /* Align with the left side (closer to menu) */
+    padding-bottom: 2rem;
+  }
+  
+  /* Run Query Button - Modern shadow styling */
+  #runQuery {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 2.5rem;
+    background-color: #000;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    box-sizing: border-box;
+    
+    /* Modern layered shadow effect */
+    box-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.04),
+      0 4px 8px rgba(0, 0, 0, 0.06),
+      0 8px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  #runQuery:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+    
+    /* Enhanced shadow on hover */
+    box-shadow: 
+      0 4px 8px rgba(0, 0, 0, 0.06),
+      0 8px 16px rgba(0, 0, 0, 0.08),
+      0 16px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  #runQuery:active {
+    transform: translateY(1px);
+    box-shadow: 
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Responsive adjustments for mobile */
+  @media (max-width: 1024px) {
+    #runQueryContainer {
+      width: 100%; /* Full width on smaller screens */
+    }
+  }
+
+
+  .global-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  /* center the number buttons */
+  .step-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  /* ensure Back/Next don’t flex-grow */
+  .nav-btn {
+    flex: 0 0 auto;
+    padding: 0.5em 1em;
+  }
+  
