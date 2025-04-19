@@ -19,7 +19,7 @@
   </style>
 </head>
 <body>
-  <h1>CTI‑GraphDB Explorer</h1>
+  <h1>Threat Intelligence Explorer</h1>
 
   <div class="main-container">
     <!-- Left Panel - Timeline History (33% width) -->
@@ -159,12 +159,14 @@
       </div>
     </div>
   </div>
-  <div id="results" class="hidden">
+  <div id="results" class="hidden" >
     <!-- Results will be displayed here -->
   </div>
 
   <!-- Neo4j browser bundle -->
   <script src="https://unpkg.com/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
-  <script type="module" src="queryBuilding.js"></script>
+  <script type="module" src="neo4j-query.js"></script>
+  <script type="module" src="ui-handler.js"></script>
+
 </body>
 </html>

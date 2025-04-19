@@ -8,11 +8,16 @@ body {
   
   h1 {
     text-align: center;
-    color: #000;
-    font-weight: 600;
+    color: #2C3E50;  /* Darker blue-gray, more professional than black */
+    font-weight: 500;  /* Slightly lighter weight for modern look */
     letter-spacing: -0.5px;
-    font-size: 4em;
-  }
+    font-size: 3rem;  /* Using rem for better responsiveness */
+    margin: 1.5rem 0;  /* Better spacing around the title */
+    padding-bottom: 0.5rem;  /* Room for optional subtle border */
+    text-shadow: 0px 1px 2px rgba(0,0,0,0.05);  /* Subtle depth */
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;  /* Modern font stack */
+    line-height: 1.2;  /* Improved readability */
+}
   
   /* Layout - Main Container with  viewport height */
 .main-container {
@@ -52,7 +57,7 @@ body {
   /* Timeline History - Adjust for new parent padding */
   .timeline-history {
     background: white;
-    padding: 1.25rem;
+    padding-bottom: 0rem !important; 
     margin: -0.25rem; /* Compensate for parent padding */
   }
   
@@ -61,12 +66,12 @@ body {
     background: white;
     border-radius: 12px;
     padding: 1.75rem;
-    margin-bottom: 1.75rem;
     position: relative;
     transition: all 0.2s ease;
     display: flex;
     flex-direction: column;
     min-height: 300px; /* Set a minimum height to ensure there's space */
+    margin: 0;
   }
   
   /* Responsive adjustments */
@@ -125,7 +130,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
-    color: #000;
+    color: #2C3E50;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid #eaeaea;
   }
@@ -153,7 +158,7 @@ body {
   }
   
   .history-step.completed .history-step-number {
-    background-color: #000;
+    background-color: #2C3E50;
     color: white;
   }
   
@@ -163,7 +168,7 @@ body {
   }
   
   .history-step.completed .history-step-content {
-    color: #000;
+    color: #2C3E50;
   }
   
   .history-step-detail {
@@ -185,7 +190,6 @@ body {
     background: white;
     border-radius: 12px;
     padding: 1.75rem;
-    margin-bottom: 1.75rem;
     position: relative;
     transition: all 0.2s ease;
     /* Add this to ensure content fills the container */
@@ -193,11 +197,9 @@ body {
   }
   
   
-  .timeline-step:hover {
-  }
-  
+
   .step-number {
-    background-color: #000;
+    background-color: #2C3E50;
     color: white;
     width: 32px;
     height: 32px;
@@ -214,7 +216,7 @@ body {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1.25rem;
-    color: #000;
+    color: #2C3E50;
     letter-spacing: -0.3px;
   }
   
@@ -225,9 +227,8 @@ body {
   
   /* Run Query Container */
   #runQueryContainer {
-    margin-top: 2rem;
+    margin: 0;
     text-align: center;
-    padding-bottom: 2rem;
   }
   
   /* Hidden elements */
@@ -261,6 +262,7 @@ body {
     
     .timeline-step {
       padding: 1.25rem;
+      padding-bottom: 0rem !important; 
     }
     
     .filter-row {
@@ -334,7 +336,7 @@ body {
   }
   
   .step-button.active {
-    background-color: #000;
+    background-color: #2C3E50;
     color: white;
   }
   
@@ -347,10 +349,8 @@ body {
   /* Run Query Container - Updated positioning and width */
 /* Run Query Container - Updated positioning, width, and modern shadow */
 #runQueryContainer {
-    margin-top: 2rem;
     width:100%; /* Match content column width */
     margin-left: 0; /* Align with the left side (closer to menu) */
-    padding-bottom: 2rem;
   }
   
   /* Run Query Button - Modern shadow styling */
@@ -358,7 +358,7 @@ body {
     width: 100%;
     font-size: 1rem;
     padding: 0.75rem 2.5rem;
-    background-color: #000;
+    background-color: #2C3E50;
     border-radius: 8px;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -373,7 +373,7 @@ body {
   }
   
   #runQuery:hover {
-    background-color: #333;
+    background-color: #354b60;
     transform: translateY(-2px);
     
     /* Enhanced shadow on hover */
@@ -402,7 +402,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px 0;
+    margin: 0;
   }
   
   /* center the number buttons */

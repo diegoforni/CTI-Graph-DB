@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
   async function loadSchemaAndPopulate() {
     querySelect.innerHTML = '<option>Loading schema…</option>';
     runQueryBtn.disabled = true;
-    globalNextBtn.disabled = true;
+    globalNextBtn.disabled = false;
 
     const session = driver.session();
     try {
