@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CTI‑GraphDB Explorer</title>
+  <link rel="stylesheet" href="styless.css" />
+</head>
+<body>
+  <h1>CTI‑GraphDB Explorer</h1>
+
+  <label for="querySelect">Choose a query:</label>
+  <select id="querySelect" disabled>
+    <option>Loading schema…</option>
+  </select>
+
+  <div class="controls">
+    <label for="maxRows">Max rows:</label>
+    <input type="number" id="maxRows" min="1" step="1" value="100"/>
+
+    <fieldset id="colCheckboxes" style="display:none">
+      <legend>Select columns to return:</legend>
+      <!-- checkboxes injected here -->
+    </fieldset>
+
+    <fieldset id="filtersContainer">
+        <legend>Filters (equality only)</legend>
+        <div id="filters"></div>
+        <button type="button" id="addFilterBtn">+ Add Filter</button>
+      </fieldset>
+    
+      <!-- NEW: Group By -->
+      <fieldset id="groupByContainer">
+        <legend>Group By</legend>
+        <div id="groupByCheckboxes"><!-- checkboxes go here --></div>
+      </fieldset>
+    
+      <button id="runQuery" disabled>Run</button>
+  </div>
+
+  <button id="runQuery" disabled>Run</button>
+  <div id="results"></div>
+
+  <!-- Neo4j browser bundle -->
+  <script src="https://unpkg.com/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
