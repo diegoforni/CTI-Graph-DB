@@ -1,8 +1,6 @@
 // ─── Vercel secrets & driver ──────────────────────────────────────
-const NEO4J_URI      = "neo4j+s://55a2b6fa.databases.neo4j.io"
-const NEO4J_PASSWORD = "whoV0idUyLm2c6IqYaynWuTgcW-KsXDdkQMF3OrF9B0"
-console.log("uri: " + NEO4J_URI)
-console.log("pass: " + NEO4J_PASSWORD)
+const NEO4J_URI      = import.meta.env.VITE_NEO4J_URI;
+const NEO4J_PASSWORD = import.meta.env.VITE_NEO4J_PASSWORD;
 const neo4j  = window.neo4j;
 const driver = neo4j.driver(
   NEO4J_URI,
