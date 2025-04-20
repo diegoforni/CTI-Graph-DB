@@ -5,8 +5,8 @@
 window.Neo4jQueryHandler = {};
 
 // ─── Vercel secrets & driver ──────────────────────────────────────
-const NEO4J_URI      = "neo4j+s://9fbf5d9e.databases.neo4j.io";
-const NEO4J_PASSWORD = "QYmbmqzk1pipcChffWNXlbNaEkVjVPlxV5bPpnaf-_Y";
+const NEO4J_URI      = import.meta.env.VITE_NEO4J_URI;
+const NEO4J_PASSWORD = import.meta.env.VITE_NEO4J_PASSWORD;
 const neo4j  = window.neo4j;
 const driver = neo4j ? neo4j.driver(
   NEO4J_URI,

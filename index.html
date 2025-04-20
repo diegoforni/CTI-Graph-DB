@@ -6,6 +6,8 @@
   <title>CTI‑GraphDB Explorer</title>
   <link rel="stylesheet" href="base.css" />
   <link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     /* Additional styles to ensure navigation consistency */
     .global-navigation {
@@ -19,7 +21,11 @@
   </style>
 </head>
 <body>
-  <h1>Threat Intelligence Explorer</h1>
+  <h1>
+    Threat Intelligence Explorer
+    <i class="fas fa-search" style="color: inherit; margin-left: 20px;"></i>
+
+  </h1>
 
   <div class="main-container">
     <!-- Left Panel - Timeline History (33% width) -->
@@ -30,7 +36,8 @@
         <div class="history-step" id="history-step1">
           <div class="history-step-number">1</div>
           <div class="history-step-content">
-            Report Type
+            <i class="fas fa-chart-line"></i>
+            Report Type 
             <div class="history-step-detail" id="history-detail-step1">Not selected yet</div>
           </div>
         </div>
@@ -38,6 +45,7 @@
         <div class="history-step" id="history-step2">
           <div class="history-step-number">2</div>
           <div class="history-step-content">
+            <i class="fas fa-sliders-h"></i>
             Row Configuration
             <div class="history-step-detail" id="history-detail-step2">Maximum rows: 100</div>
           </div>
@@ -46,6 +54,7 @@
         <div class="history-step" id="history-step3">
           <div class="history-step-number">3</div>
           <div class="history-step-content">
+            <i class="fas fa-table-columns"></i> 
             Column Selection
             <div class="history-step-detail" id="history-detail-step3">No columns selected</div>
           </div>
@@ -54,6 +63,7 @@
         <div class="history-step" id="history-step4">
           <div class="history-step-number">4</div>
           <div class="history-step-content">
+            <i class="fas fa-filter"></i> 
             Filters
             <div class="history-step-detail" id="history-detail-step4">No filters applied</div>
           </div>
@@ -62,6 +72,7 @@
         <div class="history-step" id="history-step5">
           <div class="history-step-number">5</div>
           <div class="history-step-content">
+            <i class="fas fa-object-group"></i>
             Grouping
             <div class="history-step-detail" id="history-detail-step5">No grouping applied</div>
           </div>
@@ -78,7 +89,9 @@
           <!-- Step 1: Choose Query Type -->
           <div class="timeline-step" id="step1">
             <div class="step-number">1</div>
-            <div class="step-title">Select Report Type</div>
+            <div class="step-title">
+              <i class="fas fa-chart-line"></i> Select Report Type
+            </div>
             <div class="step-content">
               <label for="querySelect">Choose a query:</label>
               <select id="querySelect" disabled>
@@ -90,7 +103,9 @@
           <!-- Step 2: Configure Rows -->
           <div class="timeline-step hidden" id="step2">
             <div class="step-number">2</div>
-            <div class="step-title">Configure Rows</div>
+            <div class="step-title">
+              <i class="fas fa-sliders-h"></i> Configure Rows
+            </div>
             <div class="step-content">
               <label for="maxRows">Max rows:</label>
               <input type="number" id="maxRows" min="1" step="1" value="100"/>
@@ -100,11 +115,12 @@
           <!-- Step 3: Select Columns -->
           <div class="timeline-step hidden" id="step3">
             <div class="step-number">3</div>
-            <div class="step-title">Select Columns</div>
+            <div class="step-title">
+              <i class="fas fa-table-columns"></i> Select Columns
+            </div>
             <div class="step-content">
               <fieldset id="colCheckboxes">
                 <legend>Select columns to return:</legend>
-                <!-- checkboxes injected here -->
               </fieldset>
             </div>
           </div>
@@ -112,7 +128,9 @@
           <!-- Step 4: Add Filters -->
           <div class="timeline-step hidden" id="step4">
             <div class="step-number">4</div>
-            <div class="step-title">Configure Filters</div>
+            <div class="step-title">
+              <i class="fas fa-filter"></i> Configure Filters
+            </div>
             <div class="step-content">
               <fieldset id="filtersContainer">
                 <legend>Filters (equality only)</legend>
@@ -125,16 +143,17 @@
           <!-- Step 5: Group By -->
           <div class="timeline-step hidden" id="step5">
             <div class="step-number">5</div>
-            <div class="step-title">Group Results</div>
+            <div class="step-title">
+              <i class="fas fa-object-group"></i> Group Results
+            </div>
             <div class="step-content">
               <fieldset id="groupByContainer">
                 <legend>Group By</legend>
-                <div id="groupByCheckboxes">
-                  <!-- checkboxes go here -->
-                </div>
+                <div id="groupByCheckboxes"></div>
               </fieldset>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -143,11 +162,11 @@
         <button class="nav-btn back-btn" id="globalBack" disabled>Back</button>
 
         <div class="step-buttons">
-          <button class="step-button active" data-step="1">1</button>
-          <button class="step-button"        data-step="2">2</button>
-          <button class="step-button"        data-step="3">3</button>
-          <button class="step-button"        data-step="4">4</button>
-          <button class="step-button"        data-step="5">5</button>
+          <button class="step-button active" data-step="1"  id="step1">1</button>
+          <button class="step-button"        data-step="2" id="step2">2</button>
+          <button class="step-button"        data-step="3" id="step3">3</button>
+          <button class="step-button"        data-step="4" id="step4">4</button>
+          <button class="step-button"        data-step="5" id="step5">5</button>
         </div>
 
         <button class="nav-btn next-btn" id="globalNext">Next</button>
@@ -155,7 +174,11 @@
 
       <!-- Run Query Button - At Bottom of Content Column -->
       <div id="runQueryContainer">
-        <button id="runQuery" disabled>Run Query</button>
+    
+    <button id="runQuery" disabled>   
+      Run Query  
+      <i class="fas fa-search" style="color: inherit; margin-left: 10px;"></i>
+    </button>
       </div>
     </div>
   </div>

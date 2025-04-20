@@ -19,12 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
   const addFilterBtn = document.getElementById('addFilterBtn');
   const groupByCheckboxesEl = document.getElementById('groupByCheckboxes');
 
-  // Contenedores de pasos
-  const step1 = document.getElementById('step1');
-  const step2 = document.getElementById('step2');
-  const step3 = document.getElementById('step3');
-  const step4 = document.getElementById('step4');
-  const step5 = document.getElementById('step5');
+  // Contenedores de pasos - divs that contain the content for each step
+  const step1 = document.querySelector('.timeline-step#step1');
+  const step2 = document.querySelector('.timeline-step#step2');
+  const step3 = document.querySelector('.timeline-step#step3');
+  const step4 = document.querySelector('.timeline-step#step4');
+  const step5 = document.querySelector('.timeline-step#step5');
+
+  // Step navigation buttons
+  const stepButtons = document.querySelectorAll('.step-button');
+  stepButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const stepNum = parseInt(this.dataset.step);
+      navigateToStep(stepNum);
+    });
+  });
 
   // Global navigation buttons
   const globalBackBtn = document.getElementById('globalBack');
@@ -45,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
       navigateToStep(currentStep + 1);
     }
   });
+
 
   // ─── UTILIDADES ───────────────────────────────────────────────────
   function toDisplayName(alias) {
