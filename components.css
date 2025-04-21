@@ -187,18 +187,44 @@
     border-color: #ff3b30;
   }
   
-  /* Results Area */
-  #results {
-    width: 100vw;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
-    margin-top: 2.5rem;
-    padding: 1.5rem;
-    background-color: white;
-    border-radius: 12px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+/* Modify the results container to allow horizontal scrolling */
+#results {
+  width: auto; /* Remove the 100vw constraint */
+  max-width: none; /* Allow it to be wider than viewport */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Make the table wider than the viewport on mobile */
+@media (max-width: 768px) {
+  table {
+    width: 150%; /* Make table wider than viewport */
+    min-width: 768px; /* Minimum width to ensure it's scrollable */
+    max-width: none; /* Remove any max-width constraints */
   }
+  
+  /* Ensure the table cells have a reasonable minimum width */
+  table th, 
+  table td {
+    min-width: 120px; /* Minimum width for each column */
+    max-width: none; /* Remove the max-width constraint */
+  }
+}
+
+/* Make sure the table parent container doesn't restrict width */
+.content-column {
+  overflow-x: visible; /* Allow content to overflow horizontally */
+}
+
+/* Ensure the main container doesn't constrain horizontal scrolling */
+.main-container {
+  overflow-x: visible; /* Allow horizontal overflow */
+}
   
   
   /* Table styles */
