@@ -51,6 +51,7 @@ body {
 /* Specific override for content-column width */
 .content-column {
   flex: 0 0 66%;
+  width: 96% !important;
 }
 
   
@@ -425,6 +426,11 @@ body {
   
     .content-column {
       width: 100%;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #globalBack {
+      display: none;
     }
   }
   
