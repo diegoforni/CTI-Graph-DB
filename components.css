@@ -189,6 +189,9 @@
   
   /* Results Area */
   #results {
+    width: 100vw;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
     margin-top: 2.5rem;
     padding: 1.5rem;
     background-color: white;
@@ -196,6 +199,7 @@
     border: 1px solid #e0e0e0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   }
+  
   
   /* Table styles */
   table {
